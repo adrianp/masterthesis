@@ -69,11 +69,17 @@
 
 \author{
     Adrian-Tudor Panescu \\
-    \href{mailto:adrian@panescu.com}{adrian@panescu.com}
+    adrian.panescu@\href{mailto:adrian.panescu@epfl.ch}{epfl.ch},
+                   \href{mailto:adrian.panescu@cern.ch}{cern.ch}
   \and
-    John Doe
+    Christine Vanoirbeek \\
+    \href{mailto:christine.vanoirbeek@epfl.ch}{christine.vanoirbeek@epfl.ch}
+  \and
+    Tibor Simko \\
+    \href{mailto:tibor.simko@cern.ch}{tibor.simko@cern.ch}
 }
-\title{LaTeX Boilerplate}
+\title{Targeted Commenting and Annotation of Heterogeneous Scientific Literature
+       and Data Resources}
 \date{}  % no date
 
 
@@ -90,10 +96,12 @@
     \input{sections/abstract.tex}
   \end{abstract}
 
+  \cleardoublepage
+
   \tableofcontents
   \listoffigures
-  \listoftables
-  \lstlistoflistings
+  %\listoftables
+  %\lstlistoflistings
 
   % next page will be odd-numbered (assumes \FloatBarrier)
   \cleardoublepage
@@ -102,64 +110,87 @@
     \label{sec:intro}
     \input{sections/intro/main.tex}
 
-  \cleardoublepage
+  \clearpage
 
-  \section{Examples}
-    \label{sec:ex}
-    \input{sections/ex/main.tex}
+  \section{Motivation}
+    \label{sec:motiv}
+    \input{sections/motiv/main.tex}
 
-    \FloatBarrier
+  \clearpage
 
-    \subsection{Algorithm}
-      \label{sec:algo}
-      \input{sections/ex/algo.tex}
+  \section{State of the Art}
+    \label{sec:soa}
+    \input{sections/soa/main.tex}
 
-    \clearpage
+  \clearpage
 
-    \subsection{Listing}
-      \label{sec:lst}
-      \input{sections/ex/lst.tex}
+  \section{Web Data Publishing}
+    \label{sec:wdp}
+    \input{sections/wdp/main.tex}
 
-    \clearpage
+    \subsection{Linked Data}
+      \label{sec:ld}
+      \input{sections/wdp/ld/main.tex}
 
-    \subsection{Float}
-      \label{sec:float}
-      \input{sections/ex/float/main.tex}
+      \subsubsection{Resource Description Framework}
+        \label{sec:rdf}
+        \input{sections/wdp/ld/rdf.tex}
 
-      \FloatBarrier
+      \subsubsection{JavaScript Object Notation for Linked Data}
+        \label{sec:json}
+        \input{sections/wdp/ld/json.tex}
 
-      \subsubsection{Figure}
-        \label{sec:fig}
-        \input{sections/ex/float/fig.tex}
+    \subsection{Structured Data}
+      \label{sec:sd}
+      \input{sections/wdp/sd/main.tex}
 
-      \FloatBarrier
+    \subsection{Open Annotation}
+      \label{sec:oa}
+      \input{sections/wdp/oa/main.tex}
 
-      \subsubsection{Subfigure}
-        \label{sec:subfig}
-        \input{sections/ex/float/subfig.tex}
+    \subsection{RESTful Web Services}
+      \label{sec:rest}
+      \input{sections/wdp/rest/main.tex}
 
-     \clearpage
+  \clearpage
 
-    \subsection{Table}
-      \label{sec:tbl}
-      \input{sections/ex/tbl.tex}
+  \section{Invenio Digital Library}
+    \label{sec:invenio}
+    \input{sections/invenio/main.tex}
 
-  \cleardoublepage
+    \subsection{Invenio Version 2}
+      \label{sec:v2}
+      \input{sections/invenio/v2/main.tex}
 
-  \section{Conclusions}
+    \subsection{CERN Document Server}
+      \label{sec:cds}
+      \input{sections/invenio/cds/main.tex}
+
+  \clearpage
+
+  \section{Design and Implementation}
+    \label{sec:impl}
+    \input{sections/impl/main.tex}
+
+    \subsection{Annotations}
+      \label{sec:anno}
+      \input{sections/impl/anno/main.tex}
+
+    \subsection{Record Targeted Comments}
+      \label{sec:notes}
+      \input{sections/impl/notes/main.tex}
+
+    \subsection{Publishing}
+      \label{sec:pub}
+      \input{sections/impl/pub/main.tex}
+
+  \clearpage
+
+  \section{Conclusions and Future Directions}
     \label{sec:outro}
     \input{sections/outro/main.tex}
 
-  \nocite{*}  % include uncited references
   \bibliographystyle{plain}
   \bibliography{bib/myrefs}
-
-  \appendixpage
-  \addappheadtotoc
-
-  \appendix
-    \section{An appendix}
-    \label{sec:app}
-    \input{sections/appendices/app.tex}
 
 \end{document}
