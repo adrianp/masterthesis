@@ -1,0 +1,22 @@
+%!TEX root=../../main.tex
+
+This section exeplifies an algorithm environment \ref{alg:fizz} and
+a\footnote{footnote}.
+
+\begin{algorithm}{$FizzBuzz(n)$}
+  \caption{FizzBuzz}
+  \label{alg:fizz}
+  \begin{algorithmic}[2]
+    \FOR{$i \gets 1; i \le n; i \gets i+1$}
+      \IF{$i$ is divisible by $15$}
+        \STATE{output FizzBuzz}
+      \ELSIF{$i$ is divisible by $3$}
+        \STATE{output Fizz}
+      \ELSIF{$i$ is divisible by $5$}
+        \STATE{output Buzz}
+      \ELSE
+        \STATE{output i}
+      \ENDIF
+    \ENDFOR
+  \end{algorithmic}
+\end{algorithm}

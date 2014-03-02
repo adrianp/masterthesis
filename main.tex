@@ -1,0 +1,165 @@
+%% Using LaTeX-Boilerplate by Adrian-Tudor Panescu %%
+%% https://github.com/adrianp/latex-boilerplate %%
+
+\documentclass[12pt,a4paper,twoside]{report}
+
+\def\pdfshellescape{1} % for epstopdf
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[british]{babel}
+
+\usepackage{algorithm}  % in texlive-science
+\usepackage{algorithmic}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{appendix}
+\usepackage{caption}
+\usepackage{listings}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{makeidx}
+\usepackage{placeins}
+\usepackage{subcaption}
+
+\usepackage{epstopdf}  % load after graphic[s,x]
+
+
+%% bold float labels
+\DeclareCaptionLabelFormat{myformat}{\textbf{#1}~\textbf{#2}}
+\captionsetup{labelformat=myformat}
+
+%% detailled margin sizes
+%\addtolength{\textwidth}{4cm}
+%\addtolength{\oddsidemargin}{-1.5cm}
+%\addtolength{\evensidemargin}{-1.5cm}
+%\addtolength{\textheight}{4.5cm}
+%\addtolength{\topmargin}{-3cm}
+%\setlength{\parindent}{0pt}
+%\setlength{\parskip}{1ex}
+
+%% Section number format
+\renewcommand*\thesection{\arabic{section}}
+
+%% Give numbers to subsubsections and add them to index
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+% rename abstract with care for babel package
+\addto\captionsbritish{%
+  \renewcommand{\abstractname}%
+  {Summary}%
+}
+
+%% rename index with care for babel package
+\addto\captionsbritish{%
+  \renewcommand{\contentsname}%
+  {Table of Contents}%
+}
+
+%% special table cell that allows line breaks
+\newcommand{\specialcell}[2][l]{%
+  \begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
+
+%% do not split long footnotes over multiple pages
+\interfootnotelinepenalty=10000
+
+
+\author{
+    Adrian-Tudor Panescu \\
+    \href{mailto:adrian@panescu.com}{adrian@panescu.com}
+  \and
+    John Doe
+}
+\title{LaTeX Boilerplate}
+\date{}  % no date
+
+
+\begin{document}
+
+  \input{sections/title.tex}
+
+  % blank pages are inserted for two-side printing
+  \input{utils/blank.tex}
+
+  \setcounter{page}{3}
+
+  \begin{abstract}
+    \input{sections/abstract.tex}
+  \end{abstract}
+
+  \tableofcontents
+  \listoffigures
+  \listoftables
+  \lstlistoflistings
+
+  % next page will be odd-numbered (assumes \FloatBarrier)
+  \cleardoublepage
+
+  \section{Introduction}
+    \label{sec:intro}
+    \input{sections/intro/main.tex}
+
+  \cleardoublepage
+
+  \section{Examples}
+    \label{sec:ex}
+    \input{sections/ex/main.tex}
+
+    \FloatBarrier
+
+    \subsection{Algorithm}
+      \label{sec:algo}
+      \input{sections/ex/algo.tex}
+
+    \clearpage
+
+    \subsection{Listing}
+      \label{sec:lst}
+      \input{sections/ex/lst.tex}
+
+    \clearpage
+
+    \subsection{Float}
+      \label{sec:float}
+      \input{sections/ex/float/main.tex}
+
+      \FloatBarrier
+
+      \subsubsection{Figure}
+        \label{sec:fig}
+        \input{sections/ex/float/fig.tex}
+
+      \FloatBarrier
+
+      \subsubsection{Subfigure}
+        \label{sec:subfig}
+        \input{sections/ex/float/subfig.tex}
+
+     \clearpage
+
+    \subsection{Table}
+      \label{sec:tbl}
+      \input{sections/ex/tbl.tex}
+
+  \cleardoublepage
+
+  \section{Conclusions}
+    \label{sec:outro}
+    \input{sections/outro/main.tex}
+
+  \nocite{*}  % include uncited references
+  \bibliographystyle{plain}
+  \bibliography{bib/myrefs}
+
+  \appendixpage
+  \addappheadtotoc
+
+  \appendix
+    \section{An appendix}
+    \label{sec:app}
+    \input{sections/appendices/app.tex}
+
+\end{document}
