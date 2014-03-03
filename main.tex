@@ -67,22 +67,6 @@
 \interfootnotelinepenalty=10000
 
 
-\author{
-    Adrian-Tudor Panescu \\
-    adrian.panescu@\href{mailto:adrian.panescu@epfl.ch}{epfl.ch},
-                   \href{mailto:adrian.panescu@cern.ch}{cern.ch}
-  \and
-    Christine Vanoirbeek \\
-    \href{mailto:christine.vanoirbeek@epfl.ch}{christine.vanoirbeek@epfl.ch}
-  \and
-    Tibor Simko \\
-    \href{mailto:tibor.simko@cern.ch}{tibor.simko@cern.ch}
-}
-\title{Targeted Commenting and Annotation of Heterogeneous Scientific Literature
-       and Data Resources}
-\date{}  % no date
-
-
 \begin{document}
 
   \input{sections/title.tex}
@@ -110,11 +94,17 @@
     \label{sec:intro}
     \input{sections/intro/main.tex}
 
-  \clearpage
+    \subsection{Invenio Digital Library Platform}
+      \label{sec:invenio}
+      \input{sections/intro/invenio/main.tex}
 
-  \section{Motivation}
-    \label{sec:motiv}
-    \input{sections/motiv/main.tex}
+      \subsubsection{CERN Document Server}
+        \label{sec:cds}
+        \input{sections/intro/invenio/cds.tex}
+
+    \subsection{Motivation}
+      \label{sec:motiv}
+      \input{sections/intro/motiv/main.tex}
 
   \clearpage
 
@@ -122,67 +112,57 @@
     \label{sec:soa}
     \input{sections/soa/main.tex}
 
-  \clearpage
+    \subsection{Commenting and Annotation Systems}
+      \label{sec:comments}
+      \input{sections/soa/comments/main.tex}
 
-  \section{Web Data Publishing}
-    \label{sec:wdp}
-    \input{sections/wdp/main.tex}
+    \subsection{Linked and Structured Data}
+      \label{sec:data}
+      \input{sections/soa/data/main.tex}
 
-    \subsection{Linked Data}
-      \label{sec:ld}
-      \input{sections/wdp/ld/main.tex}
-
-      \subsubsection{Resource Description Framework}
-        \label{sec:rdf}
-        \input{sections/wdp/ld/rdf.tex}
-
-      \subsubsection{JavaScript Object Notation for Linked Data}
-        \label{sec:json}
-        \input{sections/wdp/ld/json.tex}
-
-    \subsection{Structured Data}
-      \label{sec:sd}
-      \input{sections/wdp/sd/main.tex}
-
-    \subsection{Open Annotation}
-      \label{sec:oa}
-      \input{sections/wdp/oa/main.tex}
-
-    \subsection{RESTful Web Services}
-      \label{sec:rest}
-      \input{sections/wdp/rest/main.tex}
+      \subsubsection{Open Annotation}
+        \label{sec:oa}
+        \input{sections/soa/data/oa.tex}
 
   \clearpage
 
-  \section{Invenio Digital Library}
-    \label{sec:invenio}
-    \input{sections/invenio/main.tex}
+  \section{System Design}
+    \label{sec:design}
+    \input{sections/design/main.tex}
 
-    \subsection{Invenio Version 2}
+    \subsection{Invenio Framework}
       \label{sec:v2}
-      \input{sections/invenio/v2/main.tex}
+      \input{sections/design/v2/main.tex}
 
-    \subsection{CERN Document Server}
-      \label{sec:cds}
-      \input{sections/invenio/cds/main.tex}
+    \subsection{Annotation Framework}
+      \label{sec:anno}
+      \input{sections/design/anno/main.tex}
 
   \clearpage
 
-  \section{Design and Implementation}
+  \section{Implementation}
     \label{sec:impl}
     \input{sections/impl/main.tex}
 
-    \subsection{Annotations}
-      \label{sec:anno}
-      \input{sections/impl/anno/main.tex}
+    \subsection{General Resource Annotator}
+      \label{sec:gra}
+      \input{sections/impl/gra/main.tex}
 
-    \subsection{Record Targeted Comments}
+    \subsection{Record Targeted Annotations}
       \label{sec:notes}
       \input{sections/impl/notes/main.tex}
 
-    \subsection{Publishing}
-      \label{sec:pub}
-      \input{sections/impl/pub/main.tex}
+    \subsection{Dissemination}
+      \label{sec:diss}
+      \input{sections/impl/diss/main.tex}
+
+      \subsubsection{JavaScript Object Notation for Linked Data}
+        \label{sec:json}
+        \input{sections/impl/diss/json.tex}
+
+      \subsubsection{Annotation Publishing}
+        \label{sec:pub}
+        \input{sections/impl/diss/pub.tex}
 
   \clearpage
 
