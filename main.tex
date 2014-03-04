@@ -26,10 +26,6 @@
 
 \usepackage{epstopdf}  % load after graphic[s,x]
 
-\usepackage[printwatermark]{xwatermark}
-\usepackage{xcolor}
-\usepackage{tikz}
-
 %% bold float labels
 \DeclareCaptionLabelFormat{myformat}{\textbf{#1}~\textbf{#2}}
 \captionsetup{labelformat=myformat}
@@ -69,6 +65,7 @@
 %% do not split long footnotes over multiple pages
 \interfootnotelinepenalty=10000
 
+%% uncomment to add a DRAFT watermark on all pages
 \input{utils/draft.tex}
 
 \begin{document}
