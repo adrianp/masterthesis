@@ -13,5 +13,6 @@ rm *.lof
 rm *.bak
 rm *.lol
 rm *.lot
+rm *.xwm
 rm static/img/*.pdf
 #rm *.pdf # you may want to keep the final output
