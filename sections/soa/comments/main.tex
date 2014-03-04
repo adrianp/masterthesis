@@ -1,12 +1,77 @@
 %!TEX root=../../../main.tex
 
 Most Web application nowadays include a social aspect, mostly in the shape of
-message forums or commenting capabilities. Apart from platforms fully
-targeted at communication among their users, such as message boards, other
-applications include facilities that allow commenting the principal features,
-displayed content, or simply facilitate the communication between users.
-Notable examples include most webblogs, which usually allow comments on post,
-YouTube, which encourages users to discuss videos, or Facebook which augments
-the social aspect by embedding comments on all the updates posted by its users.
+message forums or commenting capabilities. Apart from platforms fully targeted
+at communication among their users, such as message boards, other applications
+include facilities that allow commenting the principal features, displayed
+content, or simply facilitate the communication between users.  Notable
+examples include most web blogs, which usually allow comments on post, YouTube,
+which encourages users to discuss videos, or Facebook which augments the social
+aspect by embedding comments on all the updates posted by its users.
 
-FIXME: Disqus, thepund.it, annotatorjs.org
+An emerging trend among web applications is represented by the usage of the
+social capabilities of one platform for augmenting another application or
+website. For example, Facebook offers the possibility of embedding its widgets,
+such that users can comment on external sources using their existing social
+network accounts. A more full-fledged solution in this direction is Disqus
+\cite{ref:disqus}, which provides commenting as a service to other
+applications, as exemplified in Fig. \ref{fig:disqus}. Such solutions offer
+advantages from the points of view of both the application provider and the end
+user. The provider saves development time by not having to build a custom
+commenting system, while users are given the opportunity to aggregate comments
+and annotations generated across applications on various information resources.
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[scale=0.7]{static/img/disqus.png}
+  \caption[Disqus commenting widget embedded on a web blog]
+          {Disqus commenting widget embedded on a web blog (highlighted in red rectangle).}
+  \label{fig:disqus}
+\end{figure}
+
+Most commenting solutions propose a plain text format for the inserted notes,
+but alternatives exist. Rich text editors, such as CKEditor \cite{ref:cked} are
+often used to allow standard formatting actions (e.g., bold text) on Web forms.
+More customisation options can be implemented by using special markup, such as
+XML or LaTeX, which is converted to the target format (e.g., HTML for Web
+applications). Content structure can be enforced by implementing special forms
+(see Inspire example in Fig. \ref{fig:inspire}) or by pre-defining constraints
+for the users to follow when inserting plain text (see Section \ref{sec:data}
+for an example).
+
+While comments satisfy the needs of most applications in terms of social
+interaction with and between the end users, they fall short in terms of adding
+private notes or enriching existing content by augmenting it with
+user-generated material. A new trend among the Web community is related to
+annotations, which are small pieces of information attached to various
+resources, regardless of their type (images, (hyper)text, videos).
+
+The Annotator project \cite{ref:annotator} allows developers to embed a special
+widget on their web pages, in order to enable users to annotate any available
+textual content, as exemplified in Fig. \ref{fig:annotator}.  It proposes a
+JavaScript front-end, annotations being saved in the JavaScript Object Notation
+format in order to be stored on the server side (the reference implementation
+features a Python wrapper around Elasticsearch \cite{ref:elasearch}.
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[scale=0.55]{static/img/annotator.png}
+  \caption[Example integration with the Annotator project]
+          {Example integration with the Annotator project. It allows
+           adding annotations on any Web page element; in this example, a form
+           for annotating a piece of textual information is displayed.}
+  \label{fig:annotator}
+\end{figure}
+
+While the Annotator project provides a limited number of features, it has an
+open plugin interface, which allows third-parties to provide various additions,
+such as an image tagging facility, an offline editing mode, or various
+visualisation utilities. It is interesting to note that, in contrast to the
+commenting solution discussed previously, this project regards private
+annotations as first-class citizens, support for shared content being provided
+only via a plugin. While the main purpose of the system is to be deployed over
+existing applications, a stand-alone version which allows users to keep a
+record of annotations over any Web resource is also provided.
+
+
+FIXME: thepund.it
