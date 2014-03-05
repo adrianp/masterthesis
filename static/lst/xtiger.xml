@@ -1,0 +1,15 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:xt="http://ns.inria.org/xtiger"
+      xml:lang="en" lang="en">
+
+  <xt:head version="1.0">
+    <xt:component name="target">
+     <xt:use label="URL" types="string"/>
+     <input type="text">
+    </xt:component>
+
+    <xt:component name="annotation">
+     <xt:use label="Annotation" types="string"/>
+     <input type="text">
+    </xt:component>
+  </xt:head>
