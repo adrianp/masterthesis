@@ -23,9 +23,9 @@ and annotations generated across applications on various information resources.
 
 \begin{figure}[!h]
   \centering
-  \includegraphics[scale=0.7]{static/img/disqus.png}
+  \fbox{\includegraphics[scale=0.7]{static/img/disqus.png}}
   \caption[Disqus commenting widget embedded on a web blog]
-          {Disqus commenting widget embedded on a web blog (highlighted in red rectangle).}
+          {Disqus commenting widget (highlighted in red rectangle) embedded on a web blog.}
   \label{fig:disqus}
 \end{figure}
 
@@ -42,9 +42,15 @@ for an example).
 While comments satisfy the needs of most applications in terms of social
 interaction with and between the end users, they fall short in terms of adding
 private notes or enriching existing content by augmenting it with
-user-generated material. A new trend among the Web community is related to
+user-generated material. A trend among the Web community is related to
 annotations, which are small pieces of information attached to various
 resources, regardless of their type (images, (hyper)text, videos).
+
+Kahan et al.\cite{ref:annotea} proposed the Annotea system, which allows adding
+structured RDF notes on Web Documents. The annotations are viewed as statements
+made by the author about the document. Annotea uses the Amaya \cite{ref:amaya}
+editor on the frontend, and a generic RDF database accessible via HTTP server
+for storage.
 
 The Annotator project \cite{ref:annotator} allows developers to embed a special
 widget on their web pages, in order to enable users to annotate any available
@@ -55,9 +61,9 @@ features a Python wrapper around Elasticsearch \cite{ref:elasearch}.
 
 \begin{figure}[!h]
   \centering
-  \includegraphics[scale=0.55]{static/img/annotator.png}
-  \caption[Example integration with the Annotator project]
-          {Example integration with the Annotator project. It allows
+  \fbox{\includegraphics[scale=0.55]{static/img/annotator.png}}
+  \caption[Example usage of the Annotator project]
+          {Example usage of the Annotator project. It allows
            adding annotations on any Web page element; in this example, a form
            for annotating a piece of textual information is displayed.}
   \label{fig:annotator}
@@ -73,5 +79,40 @@ only via a plugin. While the main purpose of the system is to be deployed over
 existing applications, a stand-alone version which allows users to keep a
 record of annotations over any Web resource is also provided.
 
+A similar project, funded by the European Union's Seventh Framework Programme,
+is Pundit \cite{ref:pundit}. Similar to Annotator, it features a JavaScript
+interface that allows users to annotate any Web page, but it provides more
+features in terms of formatting and structuring the annotations. For example,
+it allows generating RDF triples, as exemplified in Fig. \ref{fig:pundit}.
 
-FIXME: thepund.it
+\begin{figure}[!h]
+  \centering
+  \fbox{\includegraphics[scale=0.28]{static/img/pundit.png}}
+  \caption[Example usage of the Pundit project]
+          {Example usage of the Pundit project. Alike Annotator, it allows
+           inserting annotations into Web pages, featuring a rich editor
+           including RDF triples creation support (right hand side.}
+  \label{fig:pundit}
+\end{figure}
+
+The main focus of Pundit is allowing users to collaboratively build a knowledge
+graph, annotations being targeted not only at augmenting Web pages with
+confined information, but also at linking various resources residing on
+different domains.
+
+Pundit is designed as a client-server application. The JavaScript client
+communicates with the backend via an exposed REST\footnote{See Section
+  \ref{sec:pub} for more details regarding the REST architecture.} interface,
+which can also be used by third party plugins. Annotations are stored in a RDF
+triple store which exposes a standard SPARQL \cite{ref:sparql} endpoint. The
+open nature of the software facilitates the extension of the platform; for
+example, video resource tagging was implemented into Pundit
+\cite{ref:punditvideo}.
+
+It is important to note that between Annotea and newer projects such as
+Annotator and Pundit, the community seemed to move from defining a strict
+structure for annotations to a more loose format or to even dropping any
+content restrictions. While this might impede the consumption of annotations by
+automated systems, it also makes the process more accessible to users allowing
+for more metadata to be collected, better reflecting the web resources' meaning
+from the users' point of view\cite{ref:wu}.
