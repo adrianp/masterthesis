@@ -3,13 +3,19 @@
       xml:lang="en" lang="en">
 
   <xt:head version="1.0">
-    <xt:component name="target">
-     <xt:use label="URL" types="string"/>
-     <input type="text">
-    </xt:component>
+    <xt:component name="annotation-form">
+      <xt:component name="target">
+        <xt:use types="text">Annotation Target (URL)</xt:use>
+      </xt:component>
 
-    <xt:component name="annotation">
-     <xt:use label="Annotation" types="string"/>
-     <input type="text">
+      <xt:component name="annotation">
+        <xt:use types="text">Annotation Body</xt:use>
+      </xt:component>
     </xt:component>
   </xt:head>
+
+  <body>
+    <xt:use types="annotation-form" label="annotation"/>
+  </body>
+
+</html>
