@@ -46,12 +46,6 @@
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{3}
 
-% rename abstract with care for babel package
-\addto\captionsbritish{%
-  \renewcommand{\abstractname}%
-  {Summary}%
-}
-
 %% rename index with care for babel package
 \addto\captionsbritish{%
   \renewcommand{\contentsname}%
@@ -70,12 +64,12 @@
 
 \begin{document}
 
+  \pagenumbering{roman}
+
   \input{sections/title.tex}
 
   % blank pages are inserted for two-side printing
   \input{utils/blank.tex}
-
-  \setcounter{page}{3}
 
   \begin{abstract}
     \input{sections/abstract.tex}
@@ -90,6 +84,8 @@
 
   % next page will be odd-numbered (assumes \FloatBarrier)
   \cleardoublepage
+
+  \pagenumbering{arabic}
 
   \section{Introduction}
     \label{sec:intro}
@@ -131,13 +127,13 @@
     \label{sec:design}
     \input{sections/design/main.tex}
 
-    \subsection{Invenio Framework}
-      \label{sec:v2}
-      \input{sections/design/v2/main.tex}
-
     \subsection{Annotation Framework}
       \label{sec:anno}
       \input{sections/design/anno/main.tex}
+
+    \subsection{Invenio Framework}
+      \label{sec:v2}
+      \input{sections/design/v2/main.tex}
 
   \clearpage
 
