@@ -1,3 +1,116 @@
 %!TEX root=../../../main.tex
 
-FIXME: or2014-invenio-framework.pdf
+As the Invenio software is now being used at large-scale by a considerable
+number of organisations across various activity domains, the ability of easily
+adapting to various use cases became a stringent requirement. As a result, a
+major refactoring of the project, in order to make it more customisable, has
+been undertaken. The main focus was on changing the delivery package from a
+fairly tightly integrated digital library platform to a coherent collection of
+repository components. As this project overlapped with the reorganisation and
+contributed a number of required additions and fixes to the main source tree, a
+brief description of the process is included in the following.
+
+The first step in rewritting the platform targeted the reorganisation of the
+source code. Invenio already featured a modular design \cite{ref:lemeur}, but
+further efforts were made to better separate utilities (record commenting, user
+messaging etc.) from core bibliographic modules. This also allowed the
+identification of components that could be reused outside Invenio, being
+general enough for any other Web application. For example, a component offering
+support for external user authentication sources is now distributed separately
+of core Invenio.
+
+The second important change regards the use of external tools for simplifying
+the code base and workflows. A modern framework for building Web applications,
+Flask \cite{ref:flask} was employed for replacing the custom Web Server Gateway
+Interface (WSGI) components used since Invenio's first iterations. Similarly,
+an object-relational mapper (ORM) and SQL toolkit, SQLAlchemy
+\cite{ref:sqlalchemy} was employed in order to simplify the code used for
+interacting with the database backend and eliminate the need for hand crafted
+queries. This is implemented as a thin wrapper around standard Python classes,
+that abstracts database operations from developers. An added benefit of using
+such a solution is the possibility of switching the database system; the
+Invenio collaboration currently explores the move from MySQL to PostgreSQL for
+its relational needs.
+
+Another targeted aspect relates to the user interface, a modern and
+customisable solution being of high interest. Customisability has been achieved
+by deploying a templating engine, Jinja version 2, which is already integrated
+with the Flask framework, for creating highly modular HTML pages. It features
+an extension model in which templates inherit blocks of markup from each other,
+similar to object oriented inheritance; thus if an organisation using Invenio
+desires to use its custom design, it just needs to extend or overload the base
+templates, modifying only the required parts (e.g., logo or colour scheme).
+
+Regarding the modernisation, a series of HTML5 technologies have been employed;
+the Bootstrap \cite{ref:boostrap} framework is being used for defining a number
+of interface elements (dialogs, menus, etc.) and updated versions of various
+JavaScript libraries for delivering a fluid user experience in line with modern
+practices and patterns.
+
+A new deployment process has been developed, replacing the GNU build system
+with a Pythonic process for deploying backend dependencies, and a specialised
+workflow for static files, such as JavaScript libraries and style sheets.
+
+Performance wise improvements are also targeted, indirectly by adopting new
+practices while re-witting legacy code, and directly by employing new
+technologies such as Redis \cite{ref:redis} for distributed caching, or Celery
+\cite{ref:celery} for task scheduling and queuing.
+
+The contributions made by this project to the refactoring are as follows:
+\begin{itemize}
+  \item Fixed various issues regarding user account handling, such as
+        authentification or validation. Also, certain features such as the
+        password change facility were ported from the legacy code to the new
+        structure.
+  \item Contributed with fixes and additions to the developer workflow; for
+        example, a brief summary of the steps required for setting up an Invenio
+        development environment was compiled and maintained. Certain
+        maintainance tasks were also carried out regarding the external
+        dependencies used by Invenio, such as version upgrading and source
+        discovery and correction.
+  \item Improved various user interface aspects, by fixing existing issues,
+        further modularising Jinja templates, reorganising source code and
+        developing new utilities. For example, a routine for simplifying the
+        internationalisation of text strings used inside JavaScript source code
+        was developed.
+  \item Tested the system in order to discover or confirm any issues resulting
+        from the code reorganisation, and, where possible, proposed fixes.
+\end{itemize}
+
+Apart from these punctual contributions, a number of systematic and more
+complex tasks were carried out. As, in the initial phase, the project built
+around the commenting facilities already provided byInvenio, this module was
+constantly maintained and improved, any general additions being pushed
+back to mainline.
+
+Other additions have been the result of identifying new requirements while
+developing the annotation capabilities, namely:
+\begin{enumerate}
+  \item Implementing an easy-to-use annotation interface requires displaying a
+        preview of the targeted documents, in order to provide the oflline
+        editor experience described in Section \ref{sec:comments}. While this
+        is still an open problem in Invenio, a prototype of such a facility for
+        PDF documents has been implemented in the existing previewer module,
+        which was also improved to fit the new use-case. A brief research of
+        existing solutions was carried out, PDF.js \cite{ref:pdfjs} and Multivio
+        \cite{ref:multivio} being considered for future work.
+  \item Extending the JSONAlchemy module, one of the latest Invenio additions,
+        which provides JSON document handling abstractions in the same manner
+        SQLAlchemy does for relational models, in order to allow greater
+        flexibility in terms of usage scenarios and allow exporting data in
+        the JSON-LD RDF serialisation format. This will be discussed further in
+        Subsection \ref{sec:diss}.
+\end{enumerate}
+
+Finally, in order to provide a demonstartor for the new annotation features, a special
+instance of Invenio was deployed at \url{http://labs.invenio-software.org}.
+This required maintaining a running version in an environment close to
+production ones, while also providing customisation additions. A significant
+encountered issue relates to the Python environment version (2.6) used on CERN
+servers running the Scientific Linux operating system. For example, the
+external library used for generating JSON-LD documents, PyLD \cite{ref:pyld}
+had to be backported in order to work properly.
+
+The exact contributions made by this project in terms of source code are
+enumerated in Appendix \ref{apx:code}, along with references to the involved
+repositories.
