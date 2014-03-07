@@ -44,7 +44,15 @@ This made it unsuitable for a seamless integration with Invenio, which would
 have meant stripping any unnecessary components while preserving the required
 functionality.
 
-FIXME: notes offline mode
+One downside shared by both Annotator and Pundit is related to the targeted
+document annotation exemplified in Fig. \ref{fig:comments}. While it is
+possible to simulate such a feature in both systems, it is worth noting that
+paper reviewers frequently take notes in offline mode (e.g., during commute),
+this being one of the reasons behind the employed markup. Using any of the two
+systems in offline mode for this purpose is mostly impossible, as they rely on
+a rich graphical interface for specifying the exact annotation targets. For
+this project's purposes, both an interface and an offline editing mode should
+be provided.
 
 The careful evaluation of the existing alternatives lead us to consider
 implementing a custom solution which, on one hand, would satisfy all the user
