@@ -4,16 +4,16 @@ Most Web application nowadays include a social aspect, mostly in the shape of
 message forums or commenting capabilities. Apart from platforms fully targeted
 at communication among their users, such as message boards, other applications
 include facilities that allow commenting the principal features, displayed
-content, or simply facilitate the communication between users.  Notable
-examples include most web blogs, which usually allow comments on post, YouTube,
-which encourages users to discuss videos, or Facebook which augments the social
-aspect by embedding comments on all the updates posted by its users.
+content, or simply facilitate user engagement.  Notable examples include most
+web blogs, which usually allow comments on posts, YouTube, which encourages
+users to discuss videos, or Facebook which augments the social aspect by
+embedding comments on all the updates posted by its users.
 
 An emerging trend among web applications is represented by the usage of the
 social capabilities of one platform for augmenting another application or
 website. For example, Facebook offers the possibility of embedding its widgets,
 such that users can comment on external sources using their existing social
-network accounts. A more full-fledged solution in this direction is Disqus
+network account. A more full-fledged solution in this direction is Disqus
 \cite{ref:disqus}, which provides commenting as a service to other
 applications, as exemplified in Fig. \ref{fig:disqus}. Such solutions offer
 advantages from the points of view of both the application provider and the end
@@ -29,7 +29,7 @@ and annotations generated across applications on various information resources.
   \label{fig:disqus}
 \end{figure}
 
-Most commenting solutions propose a plain text format for the inserted notes,
+Most commenting solutions propose a plain text format for inserting notes,
 but alternatives exist. Rich text editors, such as CKEditor \cite{ref:cked} are
 often used to allow standard formatting actions (e.g., bold text) on Web forms.
 More customisation options can be implemented by using special markup, such as
@@ -46,24 +46,24 @@ user-generated material. A trend among the Web community is related to
 annotations, which are small pieces of information attached to various
 resources, regardless of their type (images, (hyper)text, videos).
 
-Kahan et al.\cite{ref:annotea} proposed the Annotea system, which allows adding
-structured RDF notes on Web Documents. The annotations are viewed as statements
-made by the author about the document. Annotea uses the Amaya \cite{ref:amaya}
-editor on the frontend, and a generic RDF database accessible via HTTP server
-for storage.
+Kahan et al. \cite{ref:annotea} proposed the Annotea system, which allows
+adding structured notes on Web Documents using the Resource Description
+Framework (RDF) format. Annotations are viewed as statements made by the author
+about the document. Annotea uses the Amaya \cite{ref:amaya} editor on the
+frontend, and a generic RDF database accessible via HTTP server for storage.
 
 The Annotator project \cite{ref:annotator} allows developers to embed a special
 widget on their web pages, in order to enable users to annotate any available
-textual content, as exemplified in Fig. \ref{fig:annotator}.  It proposes a
+textual content, as exemplified in Fig. \ref{fig:annotator}.  It features a
 JavaScript front-end, annotations being saved in the JavaScript Object Notation
 format in order to be stored on the server side (the reference implementation
-features a Python wrapper around Elasticsearch \cite{ref:elasearch}.
+features a Python wrapper around Elasticsearch \cite{ref:elasearch}).
 
 \begin{figure}[!ht]
   \centering
   \fbox{\includegraphics[scale=0.55]{static/img/annotator.png}}
-  \caption[Example usage of the Annotator project]
-          {Example usage of the Annotator project. It allows
+  \caption[Interface of the Annotator project]
+          {Interface of the Annotator project. It allows
            adding annotations on any Web page element; in this example, a form
            for annotating a piece of textual information is displayed.}
   \label{fig:annotator}
@@ -73,7 +73,7 @@ While the Annotator project provides a limited number of features, it has an
 open plugin interface, which allows third-parties to provide various additions,
 such as an image tagging facility, an offline editing mode, or various
 visualisation utilities. It is interesting to note that, in contrast to the
-commenting solution discussed previously, this project regards private
+commenting solutions discussed previously, this project regards private
 annotations as first-class citizens, support for shared content being provided
 only via a plugin. While the main purpose of the system is to be deployed over
 existing applications, a stand-alone version which allows users to keep a
@@ -89,11 +89,13 @@ exemplified in Fig. \ref{fig:pundit}.
 
 \begin{figure}[!ht]
   \centering
-  \fbox{\includegraphics[scale=0.28]{static/img/pundit.png}}
-  \caption[Example usage of the Pundit project]
-          {Example usage of the Pundit project. Alike Annotator, it allows
+  \fbox{\includegraphics[scale=0.405]{static/img/pundit.png}}
+  \caption[Interface of the Pundit project]
+          {Interface of the Pundit project. Like Annotator, it allows
            inserting annotations into Web pages, featuring a rich editor
-           including RDF triples creation support (right hand side.}
+           including RDF triples creation support (right hand side), and
+           the possibility to link various pieces of information (left hand
+           side).}
   \label{fig:pundit}
 \end{figure}
 
@@ -117,4 +119,6 @@ structure for annotations to a more loose format or to even dropping any
 content restrictions. While this might impede the consumption of annotations by
 automated systems, it also makes the process more accessible to users allowing
 for more metadata to be collected, better reflecting the web resources' meaning
-from the users' point of view\cite{ref:wu}.
+from the users' point of view \cite{ref:wu}.
+
+FIXME: Adobe PDF highlights

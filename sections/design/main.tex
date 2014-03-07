@@ -8,11 +8,11 @@ the platform:
         commenting, reviewing, tagging and grouping of records either by
         superseding the existing feature set or by providing a base framework
         upon which other features can build. Future similar features should be
-        considered by means of development time reduction.
+        considered by means of reducing development time.
   \item The integration of the new system and features should be backward
-        compatible and transparent to the end-users. Basically, the Invenio
-        application should continue to function in the same was as before this
-        project, with the same feature set.
+        compatible and transparent to end-users. Basically, the Invenio
+        application should continue to function in the same manner as before
+        this project, with identical feature set.
   \item The targeted commenting use-case, presented in Section \ref{sec:motiv}
         should be considered of high-priority, as the described workflow, while
         highly used by the community, is inefficient.
@@ -28,25 +28,27 @@ The first considered option was using one of the systems previously presented,
 namely Annotator or Pundit. The first one seems a promising solution, as it
 uses a loose data model that can be easily extended to various use cases and
 annotation target types. Unfortunately, the software is involved more on the
-frontend aspect, with only minimal infrastructure for storage. Also, the
-project focuses more on annotating fragments on HTML documents, which does not
-fit the targeted commenting use case; records in Invenio provide the full text
-usually as PDF documents and such, a proper solution must be implemented in
-order to allow making references inside them.
+frontend aspect, with only minimal infrastructure for dissemination and
+storage. Also, the project focuses more on annotating fragments of HTML
+documents, which does not fit the targeted commenting use case; records in
+Invenio provide the full text usually as PDF documents and such, a proper
+solution must be implemented in order to allow making references inside them.
 
 The Pundit project is more complete in terms of features, allowing to annotate
 various content types out of the box (text, multimedia) and providing a rich
 editor which allows embedding RDF graphs and attaching external files. This
 option was designed more as a standalone application and not as a lightweight
-wrapper like Annotator, providing features such as authentication, a complete
-backend including both storage and dissemination via a REST interface. This is
-made it unsuitable for a seamless integration in Invenio, which would have
-meant stripping any unnecessary components while preserving the required
+wrapper like Annotator, providing features such as authentication, or a
+complete backend including both storage and dissemination via a REST interface.
+This made it unsuitable for a seamless integration with Invenio, which would
+have meant stripping any unnecessary components while preserving the required
 functionality.
 
+FIXME: notes offline mode
+
 The careful evaluation of the existing alternatives lead us to consider
-implementing a custom solution which, on one hand, satisfy all the user
-requirements and also allow for a seamless integration in the existing Invenio
+implementing a custom solution which, on one hand, would satisfy all the user
+requirements and also allow for a gradual integration in the existing Invenio
 framework. Nevertheless, existing components and ideas would be reused and
 standard practices would be strictly followed, especially in terms of metadata
 dissemination.

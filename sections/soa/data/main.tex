@@ -8,18 +8,19 @@ standardised annotation dissemination formats is necessary.
 
 The systems presented in the previous subsection make use of different forms of
 RDF structures in order to represent annotations both internally and
-externally.  RDF, or the Resource Description Framework \cite{ref:rdf} is a
-model defined by the World Wide Web Consortium (W3C) to be used for online data
-interchange. The main idea behind it is related to making statements about
-resources in the form of subject-predicate-object expressions, such as:
+externally.  RDF \cite{ref:rdf} is a model defined by the World Wide Web
+Consortium (W3C) to be used for online data interchange. The main idea behind
+it is related to making statements about resources in the form of
+subject-predicate-object expressions, such as:
 
 \begin{verbatim}
-  <Dave Beckett> <edits> <the RDF syntax grammar specification>
+  <Dave Beckett> <edits the> <RDF syntax grammar specification>
 \end{verbatim}
 
 Due to this structure, these statements are named \textit{triples} in the RDF
 terminology.  A collection of RDF statements will constitute a directed
-multi-graph, also named the \textit{context} of the concerned triples. A simple
+multi-graph, also named the \textit{context} of the concerned triples; contexts
+use Internationalised Resource Identifiers (IRI) to link resources. A simple
 example is shown in Fig. \ref{fig:rdf}
 
 \begin{figure}[!ht]
@@ -27,9 +28,9 @@ example is shown in Fig. \ref{fig:rdf}
   \fbox{\includegraphics[scale=1]{static/img/rdf.png}}
   \caption[Example RDF graph]
           {Example RDF graph, source \cite{ref:rdfsyntax}. This graph
-           can be summarised briefly as: The RDF syntax specification, identified by a
-           URL, has a person identified by its full name and personal Web page
-           as editor.}
+           can be summarised briefly as: The RDF syntax specification,
+           identified by a IRI, has a person characterised by its full name and
+           personal Web page as editor.}
   \label{fig:rdf}
 \end{figure}
 
@@ -38,7 +39,7 @@ case. Metadata can be seen as a statement about a resource in the form (but not
 restricted to):
 
 \begin{verbatim}
-  <Resource identified by URL/ URI> <has metadata> <annotation body text>
+  <Resource identified by IRI> <has metadata> <annotation body text>
 \end{verbatim}
 
 The RDF data model can be serialised in different formats, such as Turtle,
@@ -48,7 +49,7 @@ to its widespread usage, leading to some confusion between the \textit{data
   model} and the \textit{serialisation format}. A typical RDF/XML document will
 look as the one in Figure \ref{lst:rdf}, which encodes the graph in Fig.
 \ref{fig:rdf}. In order to be encoded in XML, the RDF graph nodes and
-predicates need to be represented in the specific XML structural terms: element
+predicates need to be represented in the specific structural terms: element
 and attribute names, element contents and attribute values. Note that the
 example XML uses three collections to define the elements, namely the RDF
 standard set, the Dublin Core Metadata Element Set \cite{ref:dc} and a
@@ -56,8 +57,7 @@ placeholder set; in real use-cases, each Web application can define its own set
 of elements, depending on the specific domain knowledge.
 
 \begin{figure}[!ht]
-  \lstinputlisting[language=XML,
-                   frame=tb,
+  \lstinputlisting[frame=tb,
                    captionpos=b,
                    numbers=none,
                    showspaces=false,
@@ -85,7 +85,7 @@ using the SPARQL \cite{ref:sparql} language.
 While RDF provides a standard method for disseminating data, it is mainly
 purposed for machine manipulation. Taking the RDF/XML format as an example, it
 can be seen that editing such a document by hand is not optimal for end-users.
-On the other hand, capturing input and filling a XML template, while accounting
+Howbeit, capturing input and filling a XML template, while accounting
 for invalid data or out-of-scope information, can become expensive in terms of
 computing resources.
 
@@ -102,12 +102,11 @@ to guide an editing tool for building documents that follow a predefined model.
 It does this by predefining a set of typed structures and constructors for
 these (\textit{components}); for example, a minimal template for inputting
 annotations could be defined as in Figure \ref{lst:xtiger}. The XTiger template
-can be used to generate documents in a target language, for example XHTML or
+can be used to generate documents in target languages, for example XHTML or
 RDF/XML.
 
 \begin{figure}[!ht]
-  \lstinputlisting[language=XML,
-                   frame=tb,
+  \lstinputlisting[frame=tb,
                    captionpos=b,
                    numbers=none,
                    showspaces=false,

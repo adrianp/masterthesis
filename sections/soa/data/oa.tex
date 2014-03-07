@@ -15,24 +15,25 @@ The minimal basis of OA is defined as a RDF graph in which annotations have a
 target, identified by an Internationalised Resource Identifier (IRI), and a
 body. An example graph is included in Figure \ref{fig:oa}. Further restrictions
 regarding the types of these elements are not enforced; for example, the target
-of an annotation can be another annotation. Still, when exporting the RDF
-representation, the type should use the \texttt{rdf:type} attribute.
+of an annotation can be another annotation. Nevertheless, it is expected that
+the type is specified when serialising the representation, in order to
+facilitate third-party consumption.
 
 \begin{figure}[!ht]
   \centering
   \fbox{\includegraphics[scale=0.7]{static/img/oa.png}}
   \caption[Basic Open Annotation RDF Graph]
           {Basic Open Annotation RDF Graph, source \cite{ref:oa}. Annotations
-           need to specify a typed body and a target identified by an IRI
-           (e.g., a Web page).}
+           need to specify a body and target identified by an IRI (e.g., a
+           Web page).}
   \label{fig:oa}
 \end{figure}
 
 The body and target attributes can be extended by adding miscellaneous attributes.
 For example, Figure \ref{fig:oahubble} presents an annotation where the target
 is constrained to a specific region of an image. Similarly, the body can also
-be constrained; for example, it could be specified that only certain pages of
-a textbook are about the target.
+be constrained; for instance, it could be specified that only certain pages of
+a textbook are describing a target image.
 
 \begin{figure}[!ht]
   \centering
@@ -41,7 +42,8 @@ a textbook are about the target.
           {More complex example usage of Open Annotation, source \cite{ref:oahubble}.
            A Twitter message is used as the body for an annotation targeted at a
            specific region of an image. The target attribute points at the whole
-           image IRI, but is constrained by rectangle coordinates.}
+           image IRI, but is constrained by rectangle coordinates
+           ($$x, y, w, h$$).}
   \label{fig:oahubble}
 \end{figure}
 
@@ -51,6 +53,6 @@ headers than need to be used to retrieve the correct target). Further details
 can be found in the specification \cite{ref:oa}.
 
 As Open Annotation model instances are RDF graphs they can be exported in any
-serialisation format used for RDF; the guideline is to use JSON-LD
+of the supported serialisation formats; the guideline is to use JSON-LD
 \cite{ref:oa}, the option being further explored by this project, with details
 in Section \ref{sec:diss}.

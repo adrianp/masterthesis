@@ -5,7 +5,7 @@
   <xt:head version="1.0">
     <xt:component name="annotation-form">
       <xt:component name="target">
-        <xt:use types="text">Annotation Target (URL)</xt:use>
+        <xt:use types="text">Annotation Target (IRI)</xt:use>
       </xt:component>
 
       <xt:component name="annotation">
