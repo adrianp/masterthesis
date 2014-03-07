@@ -21,7 +21,9 @@
 \usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage{makeidx}
+\usepackage{pdfpages}
 \usepackage{placeins}
+\usepackage{standalone}
 \usepackage{subcaption}
 
 \usepackage{epstopdf}  % load after graphic[s,x]
@@ -169,5 +171,17 @@
 
   \bibliographystyle{alpha}
   \bibliography{bib/myrefs}
+
+  \appendixpage
+  \addappheadtotoc
+
+  \appendix
+    \section{Open Repositories 2014 Paper Submission}
+      \label{apx:or2014}
+      \input{sections/appendices/or2014.tex}
+
+    \section{Source Code Contributions}
+      \label{apx:code}
+      \input{sections/appendices/code.tex}
 
 \end{document}

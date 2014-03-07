@@ -50,7 +50,7 @@ Kahan et al. \cite{ref:annotea} proposed the Annotea system, which allows
 adding structured notes on Web Documents using the Resource Description
 Framework (RDF) format. Annotations are viewed as statements made by the author
 about the document. Annotea uses the Amaya \cite{ref:amaya} editor on the
-frontend, and a generic RDF database accessible via HTTP server for storage.
+frontend, and a generic RDF database accessible through HTTP server for storage.
 
 The Annotator project \cite{ref:annotator} allows developers to embed a special
 widget on their web pages, in order to enable users to annotate any available
@@ -75,7 +75,7 @@ such as an image tagging facility, an offline editing mode, or various
 visualisation utilities. It is interesting to note that, in contrast to the
 commenting solutions discussed previously, this project regards private
 annotations as first-class citizens, support for shared content being provided
-only via a plugin. While the main purpose of the system is to be deployed over
+only by a plugin. While the main purpose of the system is to be deployed over
 existing applications, a stand-alone version which allows users to keep a
 record of annotations over any Web resource is also provided.
 
@@ -105,13 +105,13 @@ confined information, but also at linking various resources residing on
 different domains.
 
 Pundit is designed as a client-server application. The JavaScript client
-communicates with the backend via an exposed REST\footnote{See Section
-\ref{sec:pub} for more details regarding the REST architecture.} interface,
-which can also be used by third party plugins. Annotations are stored in a RDF
-triple store which exposes a standard SPARQL \cite{ref:sparql} endpoint. The
-open nature of the software facilitates the extension of the platform; for
-example, video resource tagging was implemented into Pundit
-\cite{ref:punditvideo}.
+communicates with the backend through the exposed Representational State
+Transfer (REST)\footnote{See Section \ref{sec:pub} for more details regarding
+the REST architecture.} interface, which can also be used by third party
+plugins.  Annotations are stored in a RDF triple store which exposes a standard
+SPARQL \cite{ref:sparql} endpoint. The open nature of the software facilitates
+the extension of the platform; for example, video resource tagging was
+implemented into Pundit \cite{ref:punditvideo}.
 
 It is important to note that between Annotea and newer projects such as
 Annotator and Pundit, the community seemed to move from defining a strict
@@ -127,13 +127,14 @@ interest. While these applications mostly lack any possibility of linking data
 across documents, they also surpass current online applications in terms of
 possible methods of highlighting and annotating content. Figure
 \ref{fig:xournal} shows a brief usage example of the Xournal open source tool,
-which was inspired by Microsoft Windows Journal. Applications such as Adobe PDF
-Reader or the Mendeley reference manager provide similar capabilities, along
-with the possibility of storing and sharing annotations online. Moreover, it is
-worth noting that the interfaces used by such applications are usually more
-familiar to users, due to their longer life span. The resource linking
-capabilities of online tools along with the annotation editing capabilities of
-offline software could prove to be a powerful combination.
+which was inspired by Microsoft Windows Journal. Applications such as Adobe
+Portable Document Format (PDF) Reader or the Mendeley reference manager provide
+similar capabilities, along with the possibility of storing and sharing
+annotations online. Moreover, it is worth noting that the interfaces used by
+such applications are usually more familiar to users, due to their longer life
+span. The resource linking capabilities of online tools along with the
+annotation editing capabilities of offline software could prove to be a
+powerful combination.
 
 \begin{figure}[!ht]
   \centering
