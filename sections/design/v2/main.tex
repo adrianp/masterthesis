@@ -114,13 +114,14 @@ developing the annotation capabilities, namely:
 \end{enumerate}
 
 Finally, in order to provide a demonstrator for the new annotation features, a
-special instance of Invenio was deployed at
-\url{http://labs.invenio-software.org}.  This required maintaining a running
+special instance of Invenio, Invenio Labs, was deployed at
+\url{http://labs.invenio-software.org}. This required maintaining a running
 version in an environment close to production ones, while also providing
 customisation additions. A significant encountered issue relates to the Python
 environment version (2.6) used on CERN servers running the Scientific Linux
 operating system. For example, the external library used for generating JSON-LD
-documents, PyLD \cite{ref:pyld} had to be back-ported in order to work properly.
+documents, PyLD \cite{ref:pyld} had to be back-ported in order to work
+properly.
 
 Building this demonstrator was facilitated by the introduction of a new
 distinct package, \texttt{invenio-demosite} which allows developers to quickly

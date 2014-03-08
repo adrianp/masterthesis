@@ -1,3 +1,40 @@
 %!TEX root=../../main.tex
 
-FIXME: source code
+This appendix summarises the source code deliverables of the project.
+
+Starting on the second page, the log of all code commits over the source tree
+of the next Invenio version is included, as recorded by the Git version control
+system. The contributions can also be found online, at
+\url{http://invenio-software.org/repo/personal/invenio-apanescu}. Note that the
+\texttt{pu} (\textit{``Proposed Updates''}) branch refers to the next Invenio
+version, while the \texttt{labs} branch is used for the Invenio Labs
+demonstrator.
+
+Similarly, at \url{http://github.com/adrianp/invenio-demosite} the contributions
+brought to the separate package used for deploying customised Invenio
+installations can be found. Of interest is the \texttt{labs} branch, used for
+Invenio Labs.
+
+Two external software libraries have been maintained in order to fit the
+project's requirements. Namely, PyLD (\url{http://github.com/adrianp/pyld}),
+which was patched in order to function with the Python 2.6 version used for
+Invenio Labs (see \texttt{python2.6} branch), and Intro.js
+(\url{http://github.com/adrianp/intro.js}), a JavaScript library used for the
+Invenio Labs interactive tutorial feature (see \texttt{inveniolabs} branch).
+A bug fix for Intro.js has been accepted by the library authors and merged
+upstream (see \url{http://github.com/usablica/intro.js/pull/236}).
+
+\clearpage
+
+\lstinputlisting[showspaces=false,
+                 basicstyle=\footnotesize,
+                 breakatwhitespace=true,
+                 breaklines=true,
+                 morekeywords={SHA,Author,Date},
+                 showstringspaces=false,
+                 showtabs=false,
+                 stepnumber=2,
+                 numbersep=4pt]
+  {static/lst/pu_commits.txt}
+
+\clearpage
