@@ -1,0 +1,668 @@
+commit 660da06062f1d1dede2234c1425d275fbddcca8c
+Author: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+Date:   Tue Mar 4 08:21:57 2014 +0100
+
+    comments: login required for vote and report
+    
+    Signed-off-by: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+    Acked-by: Jiri Kuncar <jiri.kuncar@cern.ch>
+
+commit 19ee119c5d3e16db4f63bde8cf592e9ff1fc5bd1
+Author: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+Date:   Fri Feb 28 08:25:42 2014 +0100
+
+    installation: typeahead Grunt fix
+    
+    * Fix typeahead path for v0.10+.
+    
+    * Minor lint fixes.
+    
+    Signed-off-by: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+
+commit be024ac3c2924c1df5fa1d5941f71b3f00bd44ca
+Author: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+Date:   Thu Feb 27 18:18:55 2014 +0100
+
+    accounts: gettext import fix
+    
+    Signed-off-by: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+
+commit dcf0d98afb957b828cbfbedbee410127e97ab39f
+Author: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+Date:   Thu Feb 27 14:04:15 2014 +0100
+
+    base: sticky footer fix
+    
+    * Fix sticky footer issue on pages with content longer than 100% window
+      size, by updating to the reference sticky footer implementation for
+      Bootstrap3.
+    
+    Signed-off-by: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+
+commit 29d9c90d37e47d83c6e132db2ed148f6b8a37021
+Author: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+Date:   Thu Feb 27 09:13:31 2014 +0100
+
+    base: Apache configuration template fix
+    
+    * Fix newline issue when CFG_WEBSTYLE_HTTP_USE_COMPRESSION is missing.
+    
+    Signed-off-by: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+
+commit 142164a27a997a1bcc596617fb35996386c867c1
+Author: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+Date:   Wed Feb 26 08:29:49 2014 +0100
+
+    jsonalchemy: JSON-LD addition
+    
+    * Add utilities for serializing SmartJson objects to JSON-LD. See specification
+    [1] and the used pyld library [2]. The recommended method for publishing
+    JSON-LD is via the REST extension.
+    
+    [1] http://www.w3.org/TR/json-ld/
+    [2] https://github.com/digitalbazaar/pyld
+    
+    Signed-off-by: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+
+commit 46321cc36d3a59f9be9a832653df36b3262d705e
+Author: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+Date:   Wed Feb 26 08:27:25 2014 +0100
+
+    installation: pytz
+    
+    Signed-off-by: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+
+commit e24b353d950d03ea00281357acf3393cd7446721
+Author: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+Date:   Wed Feb 19 11:48:19 2014 +0100
+
+    comments: collapse.js refactoring
+    
+    * Export collpase toggle functions as module.
+    
+    Signed-off-by: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+
+commit 8cb8582bac62144332c9d81a6c4cb63576116db6
+Author: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+Date:   Wed Feb 19 10:29:45 2014 +0100
+
+    comments: tests import fix
+    
+    Signed-off-by: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+
+commit 4a4709b0c6c862103b46bf27637dc231d7ba18fe
+Author: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+Date:   Wed Feb 19 10:07:36 2014 +0100
+
+    static: bindModals focus element specification
+    
+    * Allow specifying on what element to focus when opening a modal. Useful for
+    forms.
+    
+    Signed-off-by: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+
+commit 4668d4e7cfa95ccef1f8b93c5b0d1974bfde22c5
+Author: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+Date:   Wed Feb 19 10:00:21 2014 +0100
+
+    utils: HTML ID washer
+    
+    * Add utility for cleaning strings such that they can be used as HTML IDs,
+    without generating, for example, jQuery issues. Such strings must start with
+    a lowercase letter and use only alpha-numeric characters. Unit tests included.
+    
+    Signed-off-by: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+
+commit 1201dfdc395c1906b88bebbdcc3e3147f4380830
+Author: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+Date:   Fri Feb 14 16:01:23 2014 +0100
+
+    config: pdfopt workaround
+    
+    * Adds a workaround for missing pdfopt in Ghostscript 9.0.7+, as suggested at:
+    http://invenio-software.org/ticket/1560
+    See also: http://invenio-software.org/ticket/1561
+    
+    Signed-off-by: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+
+commit 453ffc615cc8c9e63168ce2ef9e10ce6bbc11717
+Author: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+Date:   Fri Feb 14 14:31:05 2014 +0100
+
+    base: sticky footer fix
+    
+    * Fixes sticky page footer by re-adding CSS code removed from page_base.html.
+    
+    Signed-off-by: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+
+commit 9b93b6982e3b7c69a6c8ead1444262257ff697dd
+Author: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+Date:   Fri Feb 14 13:17:12 2014 +0100
+
+    utils: which function addition
+    
+    * Adds a which function, similar to GNU which. For CPython 3.3+, this is already
+    included in shutil.py. For older versions it was backported.
+    
+    * Fixes configuration variables that point to executable paths to use which.
+    
+    Co-authored-by: Jiri Kuncar <jiri.kuncar@cern.ch>
+    Signed-off-by: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+
+commit 27c43790174355fcd78c266effc7e7af467a0316
+Author: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+Date:   Thu Feb 13 16:40:14 2014 +0100
+
+    requirements: pymongo addition
+    
+    Signed-off-by: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+
+commit 9d35b39f4be59d3ba9e68dfddb9b4bb85af07806
+Author: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+Date:   Thu Feb 13 16:30:11 2014 +0100
+
+    static: modal binding element filter addition
+    
+    * Adds an optional jQuery filter parameter to the modal binding function; this
+    is useful, for example, when binding after an AJAX request for skipping already
+    bound elements.
+    
+    Signed-off-by: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+
+commit 57365b4b107a56628ebc1ee5c96aeb5973295bf7
+Author: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+Date:   Wed Feb 12 17:14:30 2014 +0100
+
+    utils: unicode fix
+    
+    * Accepts unicode as well as strings for escape_shell_arg().
+    
+    Signed-off-by: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+
+commit 909bf282eb0e88fa11b68b60ff8cd32285b787f6
+Author: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+Date:   Wed Feb 12 10:48:46 2014 +0100
+
+    previewer: refactoring
+    
+    * Changes preview view function arguments, passes request arguments.
+    
+    * Sends only file reference from view to plugins.
+    
+    * Fixes PEP8.
+    
+    * Adds previewer preference order, settable via CFG_PREVIEW_PREFERENCE, which
+    is a dictionary such as {'.pdf' : ['pdftk', 'gview']}, specifying that 'pdftk'
+    it the first choice for PDFs.
+    
+    Signed-off-by: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+
+commit fa9f53d4ef496f0529f4f06feac91af167ee9a4c
+Author: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+Date:   Thu Feb 13 13:07:37 2014 +0100
+
+    previewer: post-move fixes
+    
+    * Fixes issues generated by module renaming.
+    
+    Signed-off-by: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+
+commit 504cdf6b174eb37ef2e5c38f5c32515dc8a88376
+Author: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+Date:   Thu Feb 13 13:01:21 2014 +0100
+
+    previews: move to previewer
+    
+    * Renames the previews module to previewer. Note that this commit is broken.
+    
+    Signed-off-by: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+
+commit 1fcdd2dcd1c1444980d6e962c22086a02c900385
+Author: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+Date:   Wed Feb 12 13:43:06 2014 +0100
+
+    comments: reviews.html template
+    
+    * Re-adds reviews.html template extending from reviews_base.html. Fixes broken
+    parent move commit.
+    
+    Signed-off-by: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+
+commit 55ee1d71f4983814fd6d2d57adc32bea48b8ba48
+Author: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+Date:   Wed Feb 12 13:32:06 2014 +0100
+
+    comments: reviews_base.html template
+    
+    * Moves reviews.html to reviews_base.html. Note that this commit is broken.
+    
+    Signed-off-by: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+
+commit e9297d4e5e856e7805e569bd254266ec47436104
+Author: Adrian-Tudor Panescu <adrian@panescu.com>
+Date:   Wed Feb 12 20:17:50 2014 +0100
+
+    docs: git workflow additions and corrections
+    
+    * Adds explicit requirement for empty lines between commit message body list
+    items.
+    
+    * Changes headline length requirement to strict 50 characters.
+    
+    * Breaks long lines.
+    
+    * Adds note on using vim as commit message editor.
+    
+    * Adds a more complete commit message example.
+    
+    Signed-off-by: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+
+commit f0a4cf54d94a03149756dbb4eaac861fa3e46923
+Author: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+Date:   Mon Feb 3 16:18:26 2014 +0100
+
+    deposit: plupload filetable fix
+    
+    * Displays uploaded files in deposition form.
+    
+    Signed-off-by: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+
+commit 78636f70c032073ed5f48d73fee64303b545c92d
+Author: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+Date:   Mon Feb 3 11:39:51 2014 +0100
+
+    Grunt: typeahead.js fix
+    
+    Signed-off-by: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+
+commit dd4512e1d0ccc060fd7f76b1c1d21e83f4c3a0d8
+Author: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+Date:   Mon Feb 3 09:25:59 2014 +0100
+
+    requirements: qrcode removal
+    
+    * qrcode removed from main requirements;
+    
+    Signed-off-by: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+
+commit 148e32b78257ad9a2b5a79052fa0d02bdc90a63b
+Author: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+Date:   Fri Jan 31 16:55:11 2014 +0100
+
+    comments: bind modal on record tab change
+    
+    Signed-off-by: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+
+commit e3c30a2e7941de79dc6139a0f330cfb104b88536
+Author: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+Date:   Fri Jan 31 15:21:10 2014 +0100
+
+    deposit: static file fixes
+    
+    * Added missing plupload to Bower and Grunt;
+    * Fixed wrong location of jQuery UI themes.
+    
+    Signed-off-by: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+
+commit a88ada82b9e284e9182574e1a430e9c923d3079e
+Author: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+Date:   Thu Jan 30 16:30:54 2014 +0100
+
+    comments: fix for JavaScript in record tab
+    
+    * Moves modal binding to separate function in invenio.js;
+    * Adds macros for injecting CSS and JS.
+    
+    Signed-off-by: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+
+commit ea6b6890f41587668fe884d786cfc42a56609176
+Author: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+Date:   Thu Jan 30 14:53:00 2014 +0100
+
+    requirements: better separation
+    
+    * Moves PIL and qrcode to separate requirements file as they are needed together
+    for formatting records;
+    * Removes iPython from -extras as it is already included in -dev.
+    
+    Signed-off-by: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+
+commit 6b07e4b5c8db4bc5dff441bc4e8ce239f5e938d1
+Author: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+Date:   Wed Jan 29 12:54:19 2014 +0100
+
+    requirements: dictdiffer egg fix
+    
+    Signed-off-by: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+
+commit 8a08054ed937e05540ee4ada4af6944f2c8443ea
+Author: Adrian-Tudor Panescu <adrian@panescu.com>
+Date:   Wed Jan 29 08:18:45 2014 +0100
+
+    docs: commit message format section correction
+    
+    Signed-off-by: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+
+commit b13a848c01b52754a84f96f3c8e79e998ec6697e
+Author: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+Date:   Tue Jan 28 16:21:55 2014 +0100
+
+    SSO: print statements removal
+    
+    Signed-off-by: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+
+commit f2456c1460c7052ba078bfeba3d7e7cf04a8a180
+Author: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+Date:   Tue Jan 28 14:39:09 2014 +0100
+
+    Grunt: fix for jquery.min.map cleanup
+    
+    Signed-off-by: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+
+commit f5e3c8d202a9993af342170e38a08df3d1bad8d6
+Author: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+Date:   Tue Jan 28 12:53:05 2014 +0100
+
+    base: messages to flashed_messages macro rename
+    
+    * Renames `messages()` macro to `flashed_messages()` in order to avoid
+      conflict with the messages module.
+    
+    Signed-off-by: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+
+commit 07ed0f0ecc0ec9a0a0cff8142ef40b28a02cc031
+Author: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+Date:   Mon Jan 27 08:26:02 2014 +0100
+
+    base: add footer and header base templates
+    
+    Signed-off-by: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+
+commit 78acc70b913d53c125ef1899dcc8c5e84ec25fe6
+Author: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+Date:   Tue Jan 21 14:36:35 2014 +0100
+
+    scripts: demosite populate options
+    
+    * Custom MARC file input for demo records;
+    * Starting bibsched job id;
+    * Extra info.
+    
+    Signed-off-by: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+
+commit b06d278c25417e12616b0800b30f6e80b1c9782d
+Author: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+Date:   Mon Jan 20 15:48:06 2014 +0100
+
+    comments: Bootstrap3 fixes
+    
+    Signed-off-by: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+
+commit f44b7dc8e8c7df4d2ab3642cbfa2fa813a8f89d9
+Author: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+Date:   Fri Jan 17 13:27:10 2014 +0100
+
+    base: flashed (alerts) messages macro
+    
+    * Moves the Bootstrap alerts/ Flask flashed messages to a reusable Jinja2 macro.
+    
+    Signed-off-by: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+
+commit 727c169e867b6600fe2a5777b0505499a4a8b9f6
+Author: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+Date:   Thu Jan 16 08:53:05 2014 +0100
+
+    datastructures: SmartDict.update() addition
+    
+    Signed-off-by: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+
+commit de270a1684afc7a7ec1fb6e4aeb4998ec8caeafe
+Author: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+Date:   Tue Jan 14 13:17:29 2014 +0100
+
+    websearch: pybabel fixes
+    
+    Signed-off-by: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+
+commit c0f071eb0885c816d7829d314bbab2ac40ef1f90
+Author: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+Date:   Thu Jan 9 11:50:38 2014 +0100
+
+    base: css and js Jinja blocks in base template
+    
+    Signed-off-by: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+
+commit 2f8431348df63d2cfb6d926db11294f8a364fbb6
+Author: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+Date:   Tue Jan 7 10:42:07 2014 +0100
+
+    requirements: broken pypi links fix
+    
+    * Packages removed from pypi have now direct links; this is only a temporary
+    solution.
+    
+    Signed-off-by: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+    
+    Conflicts:
+    	requirements.txt
+
+commit 54ff0fd59bd2459d886bb5b2bf11ae49cfc4e1f1
+Author: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+Date:   Tue Jan 7 10:44:04 2014 +0100
+
+    requirements: version bumps
+    
+    * Bumps MySQL-python and beautifulsoup4 to newer versions.
+    
+    Signed-off-by: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+
+commit 3bcae675a21b1eb433341daf11f1637cba52ce60
+Author: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+Date:   Tue Jan 7 10:40:30 2014 +0100
+
+    session: fixes login when no cache backend exists
+    
+    Signed-off-by: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+
+commit 2205f3af6b4682db0a45d49e33cec34be49db823
+Author: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+Date:   Mon Jan 6 14:27:19 2014 +0100
+
+    testsuite: python 2.6 fix
+    
+    Signed-off-by: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+
+commit 262c57442ad4fe71afc7609e8074b327094db6cc
+Author: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+Date:   Fri Dec 20 12:55:15 2013 +0100
+
+    search: clearer collection name in search pages
+    
+    Reported-by: Tibor Simko <tibor.simko@cern.ch>
+    Signed-off-by: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+
+commit 19fbab85eb66710cbcfce73b3ce6f82110169acc
+Author: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+Date:   Fri Dec 20 08:57:13 2013 +0100
+
+    records: tab switching events addition
+    
+    * When tab switching is initiated, the "tabreload" JavaScript event is
+      trigerred, and when the tab is completely switched, "tabreloaded" is
+      triggered.
+    
+    Signed-off-by: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+
+commit 67a96a36515198cdad372274e875ca1cc21734a3
+Author: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+Date:   Fri Dec 13 11:43:49 2013 +0100
+
+    global: various fixes
+    
+    * Addresses problems with translatable messages.
+    
+    * Fix for login redirect not working with missing referrer.
+    
+    * Moves messages JavaScript to static folder and fixes select all
+      checkbox.
+    
+    * Fixes 404 when clicking on tag in list preview.
+    
+    * Adds licensing information.
+    
+    Signed-off-by: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+
+commit c3282b686272846f3ee59c9be595955e1c287751
+Author: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+Date:   Fri Dec 6 09:35:13 2013 +0100
+
+    legacy: webinterface import fix
+    
+    Signed-off-by: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+
+commit 56c8668852db8fd27fd3bd3346d5dde149fb1c0b
+Author: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+Date:   Thu Dec 5 15:10:22 2013 +0100
+
+    js: I18N helper
+    
+    * Adds a _ function that can be used directly inside JavaScript code for
+    internationalization; example usage in tags module.
+    
+    Signed-off-by: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+
+commit d88f43df886fd476554a8d9af0b373325ff09159
+Author: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+Date:   Thu Nov 14 11:21:35 2013 +0100
+
+    comments: stops toggle event propagation
+    
+    Signed-off-by: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+
+commit 9d5eaf2601034eae5ca9e5ff721a3967b6ae05e7
+Author: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+Date:   Tue Nov 12 16:48:07 2013 +0100
+
+    comments: order by creation date
+    
+    Signed-off-by: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+
+commit 13939335c351dd8401c7a96ead5b67927b9a084b
+Author: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+Date:   Wed Nov 6 14:04:55 2013 +0100
+
+    accounts: LostPassword form import addition
+    
+    Signed-off-by: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+
+commit 093bb33f42e8272dae9defb4f13a0fe11db37742
+Author: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+Date:   Wed Nov 6 09:28:34 2013 +0100
+
+    base: blueprint static folder check addition
+    
+    Signed-off-by: Adrian-Tudor Panescu <adrian.tudor.panescu@cern.ch>
+
+commit 0cf4510b196f00dd2586262f2ddc8042b507b227
+Author: Adrian Tudor Panescu <adrian.tudor.panescu@cern.ch>
+Date:   Wed Oct 16 13:32:38 2013 +0200
+
+    WebSession: fix for validation of changed email
+    
+    * When user changes its email, the password is reset to a random one. It
+      forces user to always confirm its new email. (closes #1601)
+    
+    Reviewed-by: Jiri Kuncar <jiri.kuncar@cern.ch>
+
+commit a9186eef3ec6850a48d08f85276b8d55d49e83f9
+Author: Adrian Tudor Panescu <adrian.tudor.panescu@cern.ch>
+Date:   Wed Oct 16 09:23:30 2013 +0200
+
+    WebSession: invalid accounts login fix
+    
+    * Local accounts with unverified emails are no longer able to login.
+    
+    Reviewed-by: Jiri Kuncar <jiri.kuncar@cern.ch>
+
+commit c620ae150b25f6c38a233f123d9a6b500926933f
+Author: Adrian Tudor Panescu <adrian.tudor.panescu@cern.ch>
+Date:   Tue Oct 15 14:26:43 2013 +0200
+
+    WebSession: change password initial port
+    
+    * Ports change password feature using WTForms.
+    
+    Reviewed-by: Jiri Kuncar <jiri.kuncar@cern.ch>
+
+commit 43e89fdc52e5734f6ca6e66d291a445e7ce39543
+Author: Adrian Tudor Panescu <adrian.tudor.panescu@cern.ch>
+Date:   Fri Oct 11 16:53:17 2013 +0200
+
+    WebSession: lost password blueprint addition
+    
+    * Ports the 'lost password' functionality to the new structure.
+    
+    Reviewed-by: Jiri Kuncar <jiri.kuncar@cern.ch>
+
+commit 554b012cab45a1b5998ad5dbe63d0fc524ab026f
+Author: Adrian Tudor Panescu <adrian.tudor.panescu@cern.ch>
+Date:   Thu Oct 17 10:26:46 2013 +0200
+
+    WebStyle: debug-toolbar display condition fix
+    
+    * The Flask debug-toolbar is shown iff it is added in CFG_DEVEL_TOOLS and
+      CFG_DEVEL_SITE == 9 (shown to ALL users), or the current user is super
+      admin (regardless of CFG_DEVEL_SITE).
+    
+    Signed-off-by: Adrian Tudor Panescu <adrian.tudor.panescu@cern.ch>
+    Reviewed-by: Jiri Kuncar <jiri.kuncar@cern.ch>
+
+commit 065c0922aca20da10abd9aa558fe19e13ee9ef4f
+Author: Adrian Tudor Panescu <adrian.tudor.panescu@cern.ch>
+Date:   Fri Oct 11 14:53:45 2013 +0200
+
+    urlutils: fix for wrong URL arguments encoding
+    
+    * Fixes issue with URLs being escaped twice.
+    
+    * TODO usage of `make_canonical_urlargd` needs to be checked.
+    
+    Signed-off-by: Jiri Kuncar <jiri.kuncar@cern.ch>
+
+commit af270ca7a576b8b575afb7d313842e834189745d
+Author: Adrian Tudor Panescu <adrian.tudor.panescu@cern.ch>
+Date:   Fri Oct 11 13:13:46 2013 +0200
+
+    WebSession: email form validation addition
+    
+    Signed-off-by: Jiri Kuncar <jiri.kuncar@cern.ch>
+
+commit bd8d829a7019437e559c0b363468fc239757dfab
+Author: Adrian Tudor Panescu <adrian.tudor.panescu@cern.ch>
+Date:   Tue Oct 15 14:37:20 2013 +0200
+
+    WebSearch: fix for cache timestamp file handling
+    
+    Reviewed-by: Jiri Kuncar <jiri.kuncar@cern.ch>
+
+commit c1ee3cf8b8b0a30d830feac898b59256b2be3e3b
+Author: Adrian Tudor Panescu <adrian.tudor.panescu@cern.ch>
+Date:   Tue Oct 15 14:43:30 2013 +0200
+
+    WebSession: fix for login referer redirection
+    
+    * Addes blacklist of links which should not be followed after login.
+      (closes #1598)
+    
+    Signed-off-by: Adrian Tudor Panescu <adrian.tudor.panescu@cern.ch>
+    Reviewed-by: Jiri Kuncar <jiri.kuncar@cern.ch>
+
+commit d22c6422296dd5391b5fffc8748a1549d65e6bea
+Author: Adrian Tudor Panescu <adrian.tudor.panescu@cern.ch>
+Date:   Tue Oct 15 14:36:07 2013 +0200
+
+    mailutils: fix for double mail sending issue
+    
+    * Addresses problem with double send emails.  (addresses #1598)
+    
+    Reviewed-by: Jiri Kuncar <jiri.kuncar@cern.ch>
