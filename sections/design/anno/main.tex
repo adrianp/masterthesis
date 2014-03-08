@@ -6,7 +6,7 @@ elements.  By accounting for the targeted use cases and standard formats, such
 as OA, the base information we reckoned necessary for any type of annotation
 consists of:
 \begin{enumerate}
-  \item The target of the annotation (e.g., an Invenio record, a Web page, etc.)
+  \item The target of the annotation (e.g., a document, a Web page, etc.)
   \item The content; we target mostly plain text, with possible markup
         (e.g., LaTeX), other types, such as multimedia, being possible by
         extending the base models (see below).
@@ -22,9 +22,9 @@ Starting from this base, further models can be defined. For example, to allow
 attaching external files, only a new field referencing such data needs to be
 added. Extensions should also be possible by slightly modifying one of the base
 fields; for example, while in the general case the target field is an IRI, for
-annotations targeting specific locations in Invenio records, supplementary
-information (e.g., page number) needs to also be supplied, in the same manner
-OA uses constraints. The model is briefly summarised in Fig.
+annotations targeting specific locations in Invenio record documents,
+supplementary information (e.g., page number) needs to also be supplied, in the
+same manner OA uses constraints. The model is briefly summarised in Fig.
 \ref{fig:datamodel}.
 
 \begin{figure}[!ht]
