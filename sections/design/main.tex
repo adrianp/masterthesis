@@ -1,27 +1,27 @@
 %!TEX root=../../main.tex
 
-Considering the current current features of Invenio and the state of the art, we
-have defined the following requirements for adding annotation capabilities to
+Considering the current features of Invenio and the state of art, we
+defined the following requirements for adding annotation capabilities to
 the platform:
 \begin{itemize}
   \item The system should be extensible and allow consolidating the existing
         commenting, reviewing, tagging and grouping of records either by
-        superseding the existing feature set or by providing a base framework
-        upon which other features can build. Future similar features should be
-        considered by means of reducing development time.
+        superseding the existing feature set, or by providing a base framework
+        upon which other features can build. Future similar capabilities should
+        be considered by means of development time reduction.
   \item The integration of the new system and features should be backward
         compatible and transparent to end-users. Basically, the Invenio
-        application should continue to function in the same manner as before
-        this project, with identical feature set.
+        application should continue to function in the same manner, with an
+        identical feature set, as before this project.
   \item The targeted commenting use-case, presented in Section \ref{sec:motiv}
         should be considered of high-priority, as the described workflow, while
-        highly used by the community, is inefficient.
+        frequently used by the community, is  highly inefficient.
   \item The new system should seamlessly integrate with the access control
         features of Invenio. For example, during the review period, records on
         CDS are restricted to only the participating authors and reviewers.
         Thus, any associated metadata should also obey the access control rules.
   \item Disseminating annotations should be possible in a standardised manner,
-        alike the harvesting possibilities employed for records.
+        alike the harvesting mechanisms employed for records.
 \end{itemize}
 
 The first considered option was using one of the systems previously presented,
@@ -38,7 +38,7 @@ The Pundit project is more complete in terms of features, allowing to annotate
 various content types out of the box (text, multimedia) and providing a rich
 editor which allows embedding RDF graphs and attaching external files. This
 option was designed more as a standalone application and not as a lightweight
-wrapper like Annotator, providing features such as authentication, or a
+wrapper like Annotator, providing features such as authentication or a
 complete backend including both storage and dissemination by means of a REST
 interface.  This made it unsuitable for a seamless integration with Invenio,
 which would have meant stripping any unnecessary components while preserving
@@ -65,5 +65,5 @@ The next subsection will give an abstract overview of the proposed system,
 while Section \ref{sec:impl} will detail the delivered feature set and
 implementation details. Due to the overlap of this project with a major
 refactoring of the Invenio project, certain miscellaneous tasks were carried
-out in order to provide a working base for the new features; this is briefly
+out in order to provide a working base for the new features, this being briefly
 discussed in Subsection \ref{sec:v2}.

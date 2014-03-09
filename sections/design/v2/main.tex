@@ -34,34 +34,37 @@ for its relational needs.
 
 Other important backend changes involved the data workflow, both inside and
 outside Invenio. Support for other formats than MARC was added by a new module,
-JSONAlchemy, which is also of interest as it provides abstraction for handling
+JSONAlchemy, which is also of interest as it provides abstractions for handling
 JSON documents in the same manner SQLAlchemy facilitates the handling of
-relational models. Another module was deployed for facilitating the creation of
-REST interfaces, a primer usage scenario being an Application Programable
-Interface (API) for document deposition.  Other additions include a customisable
-record ingestion workflow engine, developed within the INSPIRE project, and
-support for cloud storage by means of a filesystem abstraction module.
+relational models. Another module that facilitates the creation of REST
+interfaces was deployed, a primer usage scenario being an Application
+Programmable Interface (API) for document deposition.  Other additions include a
+customisable record ingestion workflow engine, developed within the INSPIRE
+project, and support for cloud storage by means of a filesystem abstraction
+module.
 
 Another targeted aspect relates to the user interface, a modern and
 customisable solution being of high interest. Customisability has been achieved
 by deploying a templating engine, Jinja version 2, which is already integrated
 with the Flask framework, for creating highly modular HTML pages. It features
 an extension model in which templates inherit blocks of markup from each other,
-similar to object oriented inheritance; thus if an organisation using Invenio
-desires to use its custom design, it just needs to extend or overload the base
-templates, modifying only the required parts (e.g., logo or colour scheme).
+similar to object oriented inheritance; thus, if an organisation using Invenio
+desires to use its own custom design elements, it just needs to extend or
+overload the base templates, modifying only the required parts (e.g., logo or
+colour scheme).
 
-Regarding the modernisation, a series of HTML5 technologies have been employed;
-the Bootstrap \cite{ref:bootstrap} frontend framework is being used for
-defining a number of interface elements (dialogs, menus, etc.) and updated
-versions of various JavaScript libraries for delivering a fluid user experience
-in line with modern practices and patterns.
+Modernisation wise, a series of HTML5 technologies have been employed; the
+Bootstrap \cite{ref:bootstrap} frontend framework is being used for defining a
+number of interface elements (dialogs, menus, etc.), and updated versions of
+various JavaScript libraries for delivering a fluid user experience in line
+with modern practices and patterns.
 
 A new deployment process has been developed, replacing the GNU build system
-with a Pythonic process for deploying backend dependencies, and a specialised
-workflow for static files, such as JavaScript libraries and style sheets.
+with a Pythonic process for supplying the backend dependencies, and a
+specialised workflow for static files, such as JavaScript libraries and style
+sheets.
 
-Performance wise improvements are also targeted, indirectly by adopting new
+Performance wise improvements were also targeted, indirectly by adopting new
 practices while re-witting legacy code, and directly by employing new
 technologies such as Redis \cite{ref:redis} for distributed caching, or Celery
 \cite{ref:celery} for task scheduling and queuing.
@@ -81,7 +84,7 @@ The contributions made by this project to the refactoring are as follows:
   \item Improved various user interface aspects, by fixing existing issues,
         further modularising Jinja templates, reorganising source code and
         developing new utilities. For example, a routine for simplifying the
-        internationalisation of text strings used inside JavaScript source code
+        internationalisation of text strings used inside JavaScript sources
         was developed.
   \item Reorganised the file tree structure for a number of modules, especially
         in regards to better separating JavaScript and Cascading Style Sheets
@@ -120,16 +123,15 @@ version in an environment close to production ones, while also providing
 customisation additions. A significant encountered issue relates to the Python
 environment version (2.6) used on CERN servers running the Scientific Linux
 operating system. For example, the external library used for generating JSON-LD
-documents, PyLD \cite{ref:pyld} had to be back-ported in order to work
-properly.
+documents, PyLD \cite{ref:pyld} was back-ported in order to work properly.
 
 Building this demonstrator was facilitated by the introduction of a new
-distinct package, \texttt{invenio-demosite} which allows developers to quickly
+distinct package, \texttt{invenio-demosite}, which allows developers to quickly
 set up a custom Invenio instance. A number of modified HTML templates were
 created, a website tutorial feature developed in JavaScript was developed, and
-custom record data along with the necessary deployment routine were put in
-place.
+record data along with the necessary deployment routine were put in
+place over this standardised customisation package.
 
-The exact contributions made by this project in terms of source code are
+The contributions made by this project in terms of source code are
 enumerated in Appendix \ref{apx:code}, along with references to the involved
 repositories.

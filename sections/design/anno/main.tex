@@ -1,10 +1,10 @@
 %!TEX root=../../../main.tex
 
 For implementing the annotation system, an extensible design was considered, in
-which different types of metadata are built using a minimal set of base
+which different classes of metadata are constructed using a minimal set of base
 elements.  By accounting for the targeted use cases and standard formats, such
-as OA, the base information we reckoned necessary for any type of annotation
-consists of:
+as OA, the minimal information set we reckoned necessary for any type of
+annotation consists of:
 \begin{enumerate}
   \item The target of the annotation (e.g., a document, a Web page, etc.)
   \item The content; we target mostly plain text, with possible markup
@@ -14,7 +14,7 @@ consists of:
   \item Time stamp
   \item Permissions of the annotation; arguably, this could also be provided as
         an extension, but as access control is an important aspect of Invenio,
-        we considered that all metadata should have restriction definitions
+        we considered that all metadata should have restriction rules
         integrated. Public access can also be encoded using this parameter.
 \end{enumerate}
 
@@ -40,8 +40,8 @@ same manner OA uses constraints. The model is briefly summarised in Fig.
 In terms of the system that should provide the annotation facilities, the
 following components need to be considered:
 \begin{itemize}
-  \item Front-end annotation editor; this is presented to the end-users,
-        who should fill in the target and content field, the other information
+  \item Front-end annotation editor; this is presented to end-users,
+        who should fill in the target and content fields, the other information
         being assumed. Different annotation models can implement different
         editors, in order to guide users into inputting complete and valid data.
   \item Annotation persistent storage.
@@ -59,20 +59,20 @@ Thus, the data flow of the annotation system can be summarised as in Fig.
   \fbox{\includegraphics[scale=0.7]{static/dia/dataflow.jpeg}}
   \caption[Annotation system data flow]
           {Annotation system data flow. End-user create new annotations using
-           the specialised editors, new content being persisted in a database.
-           Metadata is also publicised to the interested third parties.}
+           the specialised editors, content being persisted in a database.
+           Metadata can be publicised to the interested third parties.}
   \label{fig:dataflow}
 \end{figure}
 
 One issue that needs to be considered regarding the extensible annotation model
-regards the method used for persisting the data. Invenio currently uses a SQL
+regards the method used for data persistance. Invenio currently uses a SQL
 database, and this model does not fit well the proposed definitions. For
 example, if the three models in Fig. \ref{fig:datamodel} are considered, it can
 be seen that certain difficulties in expressing them in relational terms will
 be encountered. Using separate tables for each model is clearly not optimal in
-terms of scalability, while using one table by, for example, encoding data in a
-free text field with a loose syntax, is difficult to maintain, error-prone, and
-possibly sub-optimal in terms of system performance.
+terms of future scalability, while using one table by, for example, encoding
+data in a free text field with a loose syntax, is difficult to maintain,
+error-prone, and possibly sub-optimal in terms of system performance.
 
 Fortunately, the new version of Invenio brings support for storing JSON
 documents, and the project fully leveraged this possibility, as explained in the
