@@ -1,1 +1,18 @@
 %!TEX root=../../main.tex
+
+Starting from the requirements and abstract design presented in the previous
+section, an implementation of the Invenio annotation facility was proposed,
+the next subsections detailing its various aspects.
+
+It is worth noting that due to various constraints, the project started by
+implementing the targeted document annotation facility, which built upon the
+existing SQL based backend already used for record commenting. The first
+iteration was deployed on Invenio Labs, in order to gather information about
+possible issues and shortcomings of the design. Using the experience gained
+during this process, the general annotation framework was developed and the
+targeted commenting facilities ported to using it, this including the  move
+from the SQL backend to a JSON document based one.
+
+Nonetheless, the description of the developed components will follow the more
+logical top-down approach, from the highest level of abstraction to the more
+specific use-cases.

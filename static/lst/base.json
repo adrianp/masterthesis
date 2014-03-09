@@ -1,0 +1,6 @@
+{ _id:   UUID,
+  who:   UserID,
+  where: IRI,
+  what:  String,
+  when:  Timestamp,
+  perm:  Object }
