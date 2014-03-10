@@ -1,0 +1,19 @@
+<http://example.com/JohnDoe>
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+<http://xmlns.com/foaf/spec/#term_Person> .
+
+<http://example.com/JohnDoe>
+<http://xmlns.com/foaf/spec/#term_name>
+"John Doe"^^<http://purl.org/dc/dcmitype/Text> .
+
+<http://example.com/JohnDoe>
+<http://xmlns.com/foaf/spec/#term_knows>
+<http://example.com/JaneDoe> .
+
+<http://example.com/JaneDoe>
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+<http://xmlns.com/foaf/spec/#term_Person> .
+
+<http://example.com/JaneDoe>
+<http://xmlns.com/foaf/spec/#term_name>
+"Jane Doe"^^<http://purl.org/dc/dcmitype/Text> .

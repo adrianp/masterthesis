@@ -1,0 +1,23 @@
+{
+    "@graph": [
+        {
+            "@id": "http://example.com/JohnDoe",
+            "@type": "http://xmlns.com/foaf/spec/#term_Person",
+            "http://xmlns.com/foaf/spec/#term_knows": {
+                "@id": "http://example.com/JaneDoe"
+            },
+            "http://xmlns.com/foaf/spec/#term_name": {
+                "@type": "http://purl.org/dc/dcmitype/Text",
+                "@value": "John Doe"
+            }
+        },
+        {
+            "@id": "http://example.com/JaneDoe",
+            "@type": "http://xmlns.com/foaf/spec/#term_Person",
+            "http://xmlns.com/foaf/spec/#term_name": {
+                "@type": "http://purl.org/dc/dcmitype/Text",
+                "@value": "Jane Doe"
+            }
+        }
+    ]
+}

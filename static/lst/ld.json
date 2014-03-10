@@ -1,0 +1,24 @@
+{
+    "@context": {
+        "name": "http://xmlns.com/foaf/spec/#term_name",
+        "Person": "http://xmlns.com/foaf/spec/#term_Person",
+        "dc": "http://purl.org/dc/dcmitype/",
+        "knows": "http://xmlns.com/foaf/spec/#term_knows"
+    },
+    "@id": "http://example.com/JohnDoe",
+    "@type": "Person",
+    "name": {
+        "@type": "dc:Text",
+        "@value": "John Doe"
+    },
+    "knows": [
+        {
+            "@id": "http://example.com/JaneDoe",
+            "@type": "Person",
+            "name": {
+                "@type": "dc:Text",
+                "@value": "Jane Doe"
+            }
+        }
+    ]
+}

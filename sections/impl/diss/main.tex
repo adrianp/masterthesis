@@ -1,1 +1,16 @@
 %!TEX root=../../../main.tex
+
+As mentioned in Section \ref{sec:oa}, an important capability of most
+annotation systems is the dissemination of metadata across systems. An example
+related to the targeted annotation use case is the routine employed by certain
+high energy physics collaborations, which use both CDS and an external wiki
+application (TWiki) for their paper review needs. Thus, the possibility of
+transferring data between applications in a standardised manner could simplify
+both the workflow of the users and the development process of application
+providers.
+
+An API that allows exporting annotation data from the Invenio platform has been
+implemented and will be described in Subsection \ref{sec:pub}. The system uses
+the Open Annotation data model for creating standardised RDF graphs describing
+annotations, and exports them using the JSON-LD serialisation format; a brief
+description of JSON-LD follows in next subsection.
