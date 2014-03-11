@@ -1,44 +1,46 @@
 %!TEX root=../../../main.tex
 
 As JSON is a widely used format for transferring Web data, it seems only
-natural that a method for specifying linked data constructs using it to be
-proposed. This is what JSON-LD tries to achieve by allowing
-to encode RDF data in plain JSON documents \cite{ref:jsonld}.
+natural that a method for specifying linked constructs using it to be proposed.
+This is what JSON-LD achieves by allowing to encode RDF graphs in JSON
+documents \cite{ref:jsonld}.
 
 For this to be possible, the specification defines a number of keywords, all
-preceded by the "@" token; the most commonly used are:
+preceded by the ``@'' token; the most commonly used are:
 \begin{itemize}
   \item \texttt{@context}: used to define the keys and possibly values employed
-                           inside the JSON document; for example, if the JSON
+                           inside the JSON document; for example, if JSON
                            is used to describe a person identified by a name,
                            the context could specify that the \textit{``name''}
                            field has the meaning as stipulated in a standard
                            ontology (e.g., Friend of a friend
                            (FOAF) \cite{ref:foaf}). The context is itself a JSON
                            object, where the keys are the various elements used
-                           inside the main object and the values are identifiers
-                           (e.g., IRI of an ontology).
+                           inside the main document and the values are
+                           identifiers (e.g., IRI of an ontology).
   \item \texttt{@id}: used to uniquely identify JSON elements, usually by
                       means of an IRI; coming back to the above example, the
                       person could be uniquely identified by a homepage such as
-                      \texttt{http://example.com/JohnDoe}.
-  \item \texttt{@type}: used to specify the data type of the value (or more
-                        generally of a RDF node); for example, person names have
-                        a string type.
+                      \texttt{http://example.com/JohnDoe/}.
+  \item \texttt{@type}: used to specify the data type of values (or more
+                        generally of RDF nodes); for example, person names have
+                        string type.
   \item \texttt{@value}: used to specify the actual data associated with a
                          property in the RDF graph; in JSON terms, this is the
-                         value identified by a specific key. In the above
-                         example, the \textit{name} property could have the
-                         value \textit{John Doe}.
+                         value of a specific property. In the example above, the
+                         \textit{``name''} property could have the value
+                         \textit{``John Doe''}.
 \end{itemize}
 
 A JSON-LD document example is included in Fig. \ref{lst:jsonld}. To transform
-such a representation to a RDF graph, three simple operations need to be applied:
+such a representation to a RDF graph, three simple operations need to be
+applied\footnote{The complete algorithm is described formally in the
+documentation.}:
 \begin{enumerate}
   \item Expansion: this simply removes the context by replacing the keys inside
-                   it with the values (usually IRI), across the main object.
+                   it with the values (usually IRI) across the main object.
   \item Flattening: coverts the JSON object to a list of RDF graph nodes.
-                    Basically, it transforms the graph JSON structure in a
+                    Basically, it transforms the graph JSON structure into a
                     flat \textit{deterministic} one, in which all properties of
                     a node (identified by \texttt{@id}) are collected in a
                     single JSON object. The resulting graph is represented as
@@ -65,7 +67,7 @@ such a representation to a RDF graph, three simple operations need to be applied
             {JSON-LD document describing a person. The context defines the
              non-keyword elements used within the document, in order to provide
              information to the JSON-LD consumers regarding the semantic
-             meaning of the data.}
+             meaning of data.}
     \label{lst:jsonld}
 \end{figure}
 
@@ -81,13 +83,12 @@ such a representation to a RDF graph, three simple operations need to be applied
                    numbersep=4pt]
     {static/lst/ldflat.json}
     \caption[Expanded and flattened JSON-LD document]
-            {Expanded and flattened version of the JSON-LD document in
-             Fig. \ref{lst:jsonld}. The terms which are not keywords in the
-             JSON-LD vocabulary are replaced by their identifiers specified in
-             the original context, and the properties of each RDF graph node are
-             collected in a single object. Therefore, the graph
-             (\texttt{@graph}) will contain two nodes, one for each of the two
-             persons.}
+            {Expanded and subsequently flattened version of the JSON-LD document
+             in Fig. \ref{lst:jsonld}. The terms which are not keywords in the
+             JSON-LD vocabulary are replaced by their values from the original
+             context, and the properties of each RDF graph node are collected in
+             a single object. Therefore, the graph (\texttt{@graph}) will
+             contain two nodes, one for each person.}
     \label{lst:ldflat}
 \end{figure}
 
@@ -105,12 +106,12 @@ such a representation to a RDF graph, three simple operations need to be applied
             {Information extracted from the JSON-LD document in
              Fig. \ref{lst:jsonld} in RDF N-Quads format. The five statements,
              ended by full stop, specify that the resource identified by the IRI
-             \texttt{http://example.com/JohnDoe} is of type person, with the
-             meaning defined in the FOAF ontology, and has the name
-             \textit{``John Doe''}, of type text (string) as defined in the
-             Dublin Core Metadata Element Set (see \textit{``type''} term in
-             \cite{ref:dc}). Moreover, this person has an acquaintance,
-             \textit{``Jane Doe''}, described similarly.}
+             \texttt{http://example.com/JohnDoe/} is of type
+             \textit{``person''}, with the meaning defined in the FOAF ontology,
+             and has the name \textit{``John Doe''}, of type text (string) as
+             defined in the Dublin Core Metadata Element Set (see
+             \textit{``type''} term in \cite{ref:dc}). Moreover, this person has
+             an acquaintance, \textit{``Jane Doe''}, described similarly.}
     \label{lst:nquads}
 \end{figure}
 
@@ -119,27 +120,30 @@ with another purpose, namely to obtain translated versions of the same data.
 Consider a simple example in which a system supplies information about its
 users in a format similar to the one in Fig. \ref{lst:jsonld}. Another
 application wishes to use this information, but due to its internal workflow,
-would need to obtain a JSON document in which
-the \textit{``name''} property identifiers are replaced by
-\textit{``full-name''}.  Clearly, this could be achieved by retrieving the JSON
-document from the first system and modifying the fields, however, JSON-LD API
-implementations, such as PyLD \cite{ref:pyld}, provide another method, which
-basically can move the translation step from the consumer to the producer side.
-This method requires supplying another context when retrieving the expanded JSON
-document, which specifies the required translations; coming back to the above
-example, such a context can be:
+would need to obtain a JSON document in which the \textit{``name''} property
+identifiers are replaced by \textit{``full-name''}.  Clearly, this could be
+achieved by retrieving the JSON document from the first system and modifying
+the fields, however, JSON-LD API implementations, such as PyLD \cite{ref:pyld},
+provide another method, which basically can move the translation step from
+consumer- to producer- side.  This method requires supplying another context
+when retrieving the expanded JSON document, which specifies the required
+translations; coming back to the above example, such a context can be:
 \begin{verbatim}
   "@context": {"full-name": "http://xmlns.com/foaf/spec/#term_name"}
 \end{verbatim}
 
 Note that in both this context and the original one (Fig. \ref{lst:jsonld}),
 the \textit{name} and \textit{full-name} keys, respectively, refer to the same
-ontology IRI. Retrieveing an expanded JSON-LD through this method, with a
+ontology IRI. Retrieving an expanded JSON-LD through this method, with a
 context supplied, is a \textit{compaction} operation; the result will be a new
 JSON document, in which the translations specified in the new context will be
-applied (\textit{``name''} is replaced by \textit{``fullname''}). If no new
-context is supplied, the expanded JSON-LD document is retrieved. This should
-be the preferred communication method between applications interchanging
-JSON-LD data. It is interesting to note that the specification allows sending
-an IRI to a new context through a HTTP Link Header \cite{ref:rfc5988}, thus
-eliminating the need for sending large JSON payloads.
+applied (\textit{``name''} is replaced by \textit{``full-name''}). If no new
+context is supplied, the expanded JSON-LD document is retrieved. This should be
+the preferred communication method between applications interchanging JSON-LD
+data. It is interesting to note that the specification allows sending an IRI to
+a new context through a HTTP Link Header \cite{ref:rfc5988}, thus eliminating
+the need for sending large JSON payloads.
+
+While the above examples are trivial, more complex modelling and dissemination
+operations can be achieved using JSON-LD. The next subsection gives an overview
+on how this technology was employed for publicising annotations.
