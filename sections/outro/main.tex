@@ -1,5 +1,49 @@
 %!TEX root=../../main.tex
 
-FIXME: wiki usecases, XTiger form, note validator (hierarchy, syntax), import
-annotations from other (web)apps (e.g., Adobe)
-FIXME: add annos by REST
+The project delivered a prototype of an annotation framework for the Invenio
+digital library platform. The high-level aim for this was to provide a
+standardised method of allowing the input of end-user generated metadata,
+regardless of its form: document comments or tags, record collections, or
+IRI-identified resource annotations. The more specific considered use-case, the
+initial motivation of the project, was the one related to CDS paper review
+workflow, in which authors need to aggregate large number of targeted comments
+on specific document locations, such as pages, sections, figures or equations and
+consider the necessary corrections.
+
+The base building blocks of the framework are provided, along with
+implementations of the Web page annotator, and document targeted commenting
+facility. Moreover, a method of disseminating annotation data conforming with
+Open Annotation RDF model is included; this makes use of modern
+technologies such as the JSON-LD serialisation format or REST Web services in
+order to bestow a streamlined circulation workflow for any third-party
+interested in accessing Invenio metadata.
+
+A number of possible future improvements remain. In terms of the general
+annotation framework, more of the currently existing Invenio features for
+capturing user-side metadata (comments, reviews, tags, baskets) would need
+to be adapted to using the new facilities in order to validate the design and
+backend implementation details. Moreover, new facilities, such as file
+attachments, decorated formatting, integration with Invenio's search engine, or
+multimedia annotation capabilities can be considered.
+
+Regarding document targeted annotations, a more robust method of displaying the
+concerned files needs to be considered. For PDF documents, Mozilla's PDF.js
+appears to be a viable solution, as long as a method of rendering complex files
+on server-side is implemented and certain cross-browser compatibility issues
+are resolved; another solution can be Multivio. Such a solution could allow for
+a more attractive user interface, in which users could, for example, visually
+highlight text fragments, in the same manner employed by desktop applications.
+Another direction regards the validation of user input; either a solution as
+XTiger can be employed to restrict input on the user-side, or a more complex
+grammar can replace the current backend regular expression system.
+
+Finally, the REST  interface could be employed not only for data output, but
+also for input; this could allow, for example, to import annotations from other
+systems. The Invenio framework already supports data input through its REST
+framework, as implemented, for example, by the ZENODO deposition API. Apart
+from importing linked Web  data, annotations from desktop applications such as
+Mendeley can be considered.
+
+To conclude, the project explored a number of Web technologies linked to the
+resource annotation use case, implemented solutions for certain requirements of
+the Invenio platform, and paved the way for related future directions.
