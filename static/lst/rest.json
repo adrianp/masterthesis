@@ -1,0 +1,41 @@
+{
+  "http://www.w3.org/ns/oa#hasBody": {
+    "http://purl.org/dc/elements/1.1/format": "text/plain",
+    "http://www.w3.org/2011/content#characterEncoding": "utf-8",
+    "@id": "http://www.w3.org/ns/oa#hasBody",
+    "@type": [
+      "http://www.w3.org/2011/content#ContentAsText",
+      "http://purl.org/dc/dcmitype/Text"
+    ],
+    "http://www.w3.org/2011/content#chars": "Aenean vel gravida lacus, [...]"
+  },
+  "http://www.w3.org/ns/oa#motivatedBy": {
+    "@id": "http://www.w3.org/ns/oa#commenting"
+  },
+  "http://www.w3.org/ns/oa#hasTarget": {
+    "http://www.w3.org/ns/oa#hasSelector": {
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": "P.2-PP.3",
+      "@id": "http://www.w3.org/ns/oa#hasSelector",
+      "@type": "http://www.w3.org/ns/oa#FragmentSelector",
+      "http://purl.org/dc/terms/conformsTo":
+          "http://labs.invenio-software.org/api/annotations/notes_specification"
+    },
+    "@id": "http://www.w3.org/ns/oa#hasTarget",
+    "@type": "http://www.w3.org/ns/oa#SpecificResource",
+    "http://www.w3.org/ns/oa#hasSource": {
+      "@id": "http://labs.invenio-software.org/record/1"
+    }
+  },
+  "http://www.w3.org/ns/oa#annotatedAt": "2014-03-10T08:50:01+00:00",
+  "http://www.w3.org/ns/oa#annotatedBy": {
+    "http://xmlns.com/foaf/0.1/name": "dorian",
+    "http://xmlns.com/foaf/0.1/mbox": {
+      "@id": "mailto:dorian.gray@cds.cern.ch"
+    },
+    "@id": "http://labs.invenio-software.org/api/accounts/account/?id=4",
+    "@type": "http://xmlns.com/foaf/0.1/Person"
+  },
+  "@id":"http://labs.invenio-software.org/api/annotations/
+            export/?_id=9935ae97-657f-4fc1-970f-f1cbcab65c68",
+  "@type": "http://www.w3.org/ns/oa#Annotation"
+}

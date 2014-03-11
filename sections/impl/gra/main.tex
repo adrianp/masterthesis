@@ -44,17 +44,17 @@ The communication between the frontend interface and backend system is mediated
 by view functions defined in so-called Flask blueprints. Apart from allowing
 users to input data, displaying annotations is also possible.
 
-Annotations are stored in a MongoDB database using the facilities provided by
-JSONAlchemy. This module allows defining a schema for JSON documents, in which
-the collection of fields and various restrictions on them can be defined; for
-example, the UUID is required for all annotations and the time stamp should
-have a standard format. Moreover, JSONAlchemy allows querying the stored
-objects (e.g., get all annotations with the target being the main page of CDS),
-and modifying them. A thin wrapper for adapting these operations to the
-annotation use case is included in an internal API, which can be used by the
-Flask blueprint, REST interface (see Subsection \ref{sec:pub}) or even other
-Invenio modules to access annotation data. An overview of the workflow is
-included in Fig. \ref{fig:baseanno}.
+Annotations are stored in a MongoDB database \cite{ref:mongo} using the
+facilities provided by JSONAlchemy. This module allows defining a schema for
+JSON documents, in which the collection of fields and various restrictions on
+them can be defined; for example, the UUID is required for all annotations and
+the time stamp should have a standard format. Moreover, JSONAlchemy allows
+querying the stored objects (e.g., get all annotations with the target being
+the main page of CDS), and modifying them. A thin wrapper for adapting these
+operations to the annotation use case is included in an internal API, which can
+be used by the Flask blueprint, REST interface (see Subsection \ref{sec:pub})
+or even other Invenio modules to access annotation data. An overview of the
+workflow is included in Fig. \ref{fig:baseanno}.
 
 \begin{figure}[!ht]
   \centering

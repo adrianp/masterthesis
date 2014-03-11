@@ -126,8 +126,8 @@ achieved by retrieving the JSON document from the first system and modifying
 the fields, however, JSON-LD API implementations, such as PyLD \cite{ref:pyld},
 provide another method, which basically can move the translation step from
 consumer- to producer- side.  This method requires supplying another context
-when retrieving the expanded JSON document, which specifies the required
-translations; coming back to the above example, such a context can be:
+when retrieving the expanded (or flattened) JSON document, which specifies the
+required translations; coming back to the above example, such a context can be:
 \begin{verbatim}
   "@context": {"full-name": "http://xmlns.com/foaf/spec/#term_name"}
 \end{verbatim}
