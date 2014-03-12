@@ -1,7 +1,7 @@
 %% Using LaTeX-Boilerplate by Adrian-Tudor Panescu %%
 %% https://github.com/adrianp/latex-boilerplate %%
 
-\documentclass[12pt,a4paper,twoside]{report}
+\documentclass[12pt,a4paper]{report}
 
 \def\pdfshellescape{1} % for epstopdf
 
@@ -15,9 +15,8 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{appendix}
-%\usepackage[T1]{fontenc}
 \usepackage{caption}
-\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage[left=2.5cm,right=2cm,top=3cm,bottom=3cm,twoside]{geometry}
 \usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage{listings}
@@ -28,6 +27,7 @@
 \usepackage{subcaption}
 
 \usepackage{epstopdf}  % load after graphic[s,x]
+
 
 %% bold float labels
 \DeclareCaptionLabelFormat{myformat}{\textbf{#1}~\textbf{#2}}
@@ -82,13 +82,12 @@
 
   \tableofcontents
   \listoffigures
-  %\listoftables
-  %\lstlistoflistings
 
   % next page will be odd-numbered (assumes \FloatBarrier)
   \cleardoublepage
 
   \pagenumbering{arabic}
+  %\pagestyle{headings}
 
   \section{Introduction}
     \label{sec:intro}
@@ -107,7 +106,7 @@
 
     \input{sections/intro/main.tex}
 
-  \clearpage
+  \cleardoublepage
 
   \section{State of the Art}
     \label{sec:soa}
@@ -117,6 +116,8 @@
       \label{sec:comments}
       \input{sections/soa/comments/main.tex}
 
+    \clearpage
+
     \subsection{Linked and Structured Data}
       \label{sec:data}
       \input{sections/soa/data/main.tex}
@@ -125,7 +126,7 @@
         \label{sec:oa}
         \input{sections/soa/data/oa.tex}
 
-  \clearpage
+  \cleardoublepage
 
   \section{System Design}
     \label{sec:design}
@@ -139,7 +140,7 @@
       \label{sec:v2}
       \input{sections/design/v2/main.tex}
 
-  \clearpage
+  \cleardoublepage
 
   \section{Implementation}
     \label{sec:impl}
@@ -153,6 +154,8 @@
       \label{sec:notes}
       \input{sections/impl/notes/main.tex}
 
+    \clearpage
+
     \subsection{Dissemination}
       \label{sec:diss}
       \input{sections/impl/diss/main.tex}
@@ -161,18 +164,24 @@
         \label{sec:json}
         \input{sections/impl/diss/json.tex}
 
+      \clearpage
+
       \subsubsection{Annotation Publishing}
         \label{sec:pub}
         \input{sections/impl/diss/pub.tex}
 
-  \clearpage
+  \cleardoublepage
 
   \section{Conclusions and Future Directions}
     \label{sec:outro}
     \input{sections/outro/main.tex}
 
+  \cleardoublepage
+
   \bibliographystyle{alpha}
   \bibliography{bib/myrefs}
+
+  \cleardoublepage
 
   \appendixpage
   \addappheadtotoc
@@ -181,6 +190,8 @@
     \section{Open Repositories 2014 Paper Submission}
       \label{apx:or2014}
       \input{sections/appendices/or2014.tex}
+
+    \cleardoublepage
 
     \section{Source Code Contributions}
       \label{apx:code}

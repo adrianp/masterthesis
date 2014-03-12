@@ -68,9 +68,9 @@ commenting facilities, in two different manners:
         example, an interface similar to the one in Fig. \ref{fig:noteview}.
 \end{itemize}
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
   \centering
-  \fbox{\includegraphics[scale=0.4]{static/img/commentform.png}}
+  \fbox{\includegraphics[scale=0.381]{static/img/commentform.png}}
   \caption[Invenio commenting form allowing annotation markup]
           {Invenio commenting form allowing annotation markup. To add remarks
            on any document element users can employ the markup described on the
@@ -90,7 +90,7 @@ symbols the beginning and end, respectively, of the text line; the line break
 is inserted purely for formatting reasons. Specifiers are the actual locations
 typed by the markers (e.g., page \textit{one}).
 
-While the final reglar expression used for extracting the annotations is quite
+While the final regular expression used for extracting the annotations is quite
 complex, it is composed of simple building blocks. For example, the section
 marker is defined in a single line of code, as shown in Fig. \ref{lst:regex}.
 Nevertheless, if the regular expression mechanism becomes too complex, or the
@@ -111,8 +111,8 @@ grammar could be considered.
     {static/lst/regex.py}
     \caption[Regular expression marker definition for sections]
             {Regular expression marker definition for sections. The regular
-             expression is defined as the marker ($S$), followed by a fullstop,
-             followed by list of alpa-numeric characters of length equal or
+             expression is defined as the marker ($S$), followed by a full stop,
+             followed by list of alpha-numeric characters of length equal or
              greater than $1$ (the global definition of $LOCATION$ is currently
              used for almost all markers).}
     \label{lst:regex}
@@ -147,6 +147,8 @@ For completeness, the workflow of document annotations is included in Fig.
   \label{fig:docanno}
 \end{figure}
 
+\FloatBarrier
+
 Finally, annotations can be previewed in a manner similar to the one presented
 in Fig. \ref{fig:noteview}. The current version proposes a two-column window,
 with one column dedicated to previewing the concerned document (currently the
@@ -163,8 +165,6 @@ designed in a manner addressing two issues:
 
           This is a very good paper, but I have the following remark:
           P.2: F.3a: equation system is not presumed 
-
-          Regards,
         \end{verbatim}
         only the remark on subfigure $3a$ on the second page will be displayed.
         The complete comments can still be accessed in the standard Invenio
@@ -176,9 +176,9 @@ designed in a manner addressing two issues:
         the most particular one.
 \end{enumerate}
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
   \centering
-  \fbox{\includegraphics[scale=0.41]{static/img/noteview.png}}
+  \fbox{\includegraphics[scale=0.398]{static/img/noteview.png}}
   \caption[Document annotation previewer]
           {Document annotation previewer. A PDF document preview is included on
            the left-hand-side, while the annotations on the currently displayed

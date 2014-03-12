@@ -45,7 +45,7 @@ described in Section \ref{sec:notes}, for which the conversions are as follows:
         used, the mentioned information would need to be directly included in
         the annotation JSON model, resulting in duplication of data. Another
         solution would be to provide only minimal information regarding users,
-        namely an IRI pointing to a complete profile\footnote{This is currenly
+        namely an IRI pointing to a complete profile\footnote{This is currently
         not available in Invenio.}.
   \item For the \texttt{annotatedAt} field, the time stamp is provided as-is. A
         note here is that, as data producers have no knowledge regarding their
@@ -67,8 +67,8 @@ For annotations on Invenio Web pages the process is similar, except for the
 target field, which can be identified uniquely by an IRI.
 
 The end result of the translation operation is a JSON document which, apart
-from the fieldsd escribed above, also contains the entire context definitions;
-this is denoted internaly as the \textit{``full''} format. Other formats, such
+from the fields described above, also contains the entire context definitions;
+this is denoted internally as the \textit{``full''} format. Other formats, such
 as the expanded or N-Quads ones, can be obtained by simply calls to the PyLD
 library \cite{ref:pyld}. An example of an expanded JSON-LD representation of a
 document annotation is included in Fig. \ref{lst:annojson}.
@@ -85,8 +85,8 @@ document annotation is included in Fig. \ref{lst:annojson}.
                    morekeywords={@context,@id,@type,@value},
                    numbersep=4pt]
     {static/lst/rest.json}
-    \caption[Expanded JSON-LD document describing an annotation]
-            {Expanded JSON-LD document describing an annotation. The internal
+    \caption[Annotation serialised as an expanded JSON-LD document]
+            {Annotation serialised as an expanded JSON-LD document. The internal
              representation is converted to an OA compliant one, using the
              standard vocabulary.}
     \label{lst:annojson}
@@ -111,6 +111,8 @@ constraints on the client--server communication protocols:
   \item Server responses may be cached and load-balancing may be employed
         without disrupting clients or corrupting data.
 \end{itemize}
+
+\FloatBarrier
 
 The uniform server--client interface is the basis of the REST architecture and
 can be described in terms of guidelines targeting four aspects:
@@ -166,7 +168,7 @@ request parameters in a JSON document in which three parameters are of interest:
   \item \texttt{new\_context}: the new context to use for compaction or
                                flattening, the tree structure for framing, or
                                the normalisation options (e.g.,
-                               \texttt{\{"format": "application/nquads"\}}).
+                               $\{``format'': ``application/nquads''\}$).
 \end{enumerate}
 
 To retrieve the document in Fig. \ref{lst:annojson}, the following
@@ -196,7 +198,7 @@ API, and ending with the REST dissemination service.
 
 \begin{figure}[!ht]
   \centering
-  \fbox{\includegraphics[scale=0.5]{static/dia/rest_anno.jpeg}}
+  \fbox{\includegraphics[scale=0.490]{static/dia/rest_anno.jpeg}}
   \caption[Annotation dissemination workflow]
           {Annotation dissemination workflow; after being translated to a proper
            standardised format (Open Annotation JSON-LD) and processed by PyLD,
