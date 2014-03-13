@@ -7,24 +7,24 @@
       "http://www.w3.org/2011/content#ContentAsText",
       "http://purl.org/dc/dcmitype/Text"
     ],
-    "http://www.w3.org/2011/content#chars": "Aenean vel gravida lacus, [...]"
+    "http://www.w3.org/2011/content#chars": "Aenean vel gravida [...]"
   },
   "http://www.w3.org/ns/oa#motivatedBy": {
     "@id": "http://www.w3.org/ns/oa#commenting"
   },
   "http://www.w3.org/ns/oa#hasTarget": {
-    "http://www.w3.org/ns/oa#hasSelector": {
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": "P.2-PP.3",
-      "@id": "http://www.w3.org/ns/oa#hasSelector",
-      "@type": "http://www.w3.org/ns/oa#FragmentSelector",
-      "http://purl.org/dc/terms/conformsTo":
-          "http://labs.invenio-software.org/api/annotations/notes_specification"
+   "http://www.w3.org/ns/oa#hasSelector": {
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": "P.2-PP.3",
+    "@id": "http://www.w3.org/ns/oa#hasSelector",
+    "@type": "http://www.w3.org/ns/oa#FragmentSelector",
+    "http://purl.org/dc/terms/conformsTo":
+     "http://labs.invenio-software.org/api/annotations/notes_specification"
     },
-    "@id": "http://www.w3.org/ns/oa#hasTarget",
-    "@type": "http://www.w3.org/ns/oa#SpecificResource",
-    "http://www.w3.org/ns/oa#hasSource": {
-      "@id": "http://labs.invenio-software.org/record/1"
-    }
+   "@id": "http://www.w3.org/ns/oa#hasTarget",
+   "@type": "http://www.w3.org/ns/oa#SpecificResource",
+   "http://www.w3.org/ns/oa#hasSource": {
+    "@id": "http://labs.invenio-software.org/record/1"
+   }
   },
   "http://www.w3.org/ns/oa#annotatedAt": "2014-03-10T08:50:01+00:00",
   "http://www.w3.org/ns/oa#annotatedBy": {
