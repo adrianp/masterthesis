@@ -65,6 +65,9 @@
 %% uncomment to add a DRAFT watermark on all pages
 \input{utils/draft.tex}
 
+%% words that should not by hyphenated
+%\hyphenation{JSONAlchemy}
+
 \begin{document}
 
   \pagenumbering{roman}
@@ -170,7 +173,7 @@
         \label{sec:pub}
         \input{sections/impl/diss/pub.tex}
 
-  \cleardoublepage
+  %\cleardoublepage
 
   \section{Conclusions and Future Directions}
     \label{sec:outro}
@@ -197,7 +200,7 @@
       \label{apx:code}
       \input{sections/appendices/code.tex}
 
-  % if last page is odd, uncomment next line
-  \input{utils/blank.tex}
+  % if last page is odd-numbered, uncomment next line
+  %\input{utils/blank.tex}
 
 \end{document}

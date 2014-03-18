@@ -15,6 +15,8 @@ chosen to implicitly attach annotations to the latest version of record
 documents; nevertheless, this can be changed with minimal effort due to the
 customisable nature of the JSON models.
 
+\newpage
+
 Regarding the document locations to which annotations can refer, after studying
 over one thousand comments from CDS review rounds, we have chosen a total of
 nine so-called \textit{``markers''} which can identify valid targets:
@@ -119,19 +121,26 @@ grammar could be considered.
     \label{lst:regex}
 \end{figure}
 
+\newpage
+
 Extracted annotations will be saved in a JSON document complying with the
-JSONAlchemy template, in the MongoDB database. To summarise, the model for
-targeted document annotations is similar to the base one presented in Section
-\ref{sec:gra}, except for the \textit{``where''} field which is composed of the
-record identifier and document marker(s), and a new field containing the
-identifier of the comment in which the annotation originated (used for
-providing context to end-users). A remark here is that in order to use more
-standard IRI locators for the target, as in the base model, a scheme that
-allows navigating to a preview of the specified document location could be
-used.  For example, \texttt{/record/1/annotations/page1-paragraph2/} could be
-employed to open a previewer highlighting the specified text region. This is
-currently implemented only for page numbers, due to technical limitations of
-the document previewer solution.
+JSONAlchemy template, in the MongoDB database. It is worth noting that these
+annotations are stored along with the ones described Subsection \ref{sec:gra}
+in the same \textit{collection} (equivalent of a SQL table); this is made
+possible by the fact that the database accepts dynamic schemas and not rigid,
+pre-defined ones.
+
+To summarise, the model for targeted document annotations is similar to the
+base one presented in Section \ref{sec:gra}, except for the \textit{``where''}
+field which is composed of the record identifier and document marker(s), and a
+new field containing the identifier of the comment in which the annotation
+originated (used for providing context to end-users). A remark here is that in
+order to use more standard IRI locators for the target, as in the base model, a
+scheme that allows navigating to a preview of the specified document location
+could be used.  For example, \texttt{/record/1/annotations/page1-paragraph2/}
+could be employed to open a previewer highlighting the specified text region.
+This is currently implemented only for page numbers, due to technical
+limitations of the document previewer solution.
 
 For completeness, the workflow of document annotations is included in Fig.
 \ref{fig:docanno}.

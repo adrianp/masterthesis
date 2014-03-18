@@ -68,10 +68,11 @@ target field, which can be identified uniquely by an IRI.
 
 The end result of the translation operation is a JSON document which, apart
 from the fields described above, also contains the entire context definitions;
-this is denoted internally as the \textit{``full''} format. Other formats, such
-as the expanded or N-Quads ones, can be obtained by simply calls to the PyLD
-library \cite{ref:pyld}. An example of an expanded JSON-LD representation of a
-document annotation is included in Fig. \ref{lst:annojson}.
+this is denoted internally as the \textit{``inline''} or \textit{``full''}
+format. Other formats, such as the expanded or RDF/ N-Quads ones, can be
+obtained by simple calls to the PyLD API \cite{ref:pyld}. An example of an
+expanded JSON-LD representation of a document annotation is included in Fig.
+\ref{lst:annojson}.
 
 \begin{figure}[!ht]
   \lstinputlisting[frame=tb,
@@ -112,7 +113,7 @@ constraints on the client--server communication protocols:
         without disrupting clients or corrupting data.
 \end{itemize}
 
-\FloatBarrier
+\clearpage
 
 The uniform server--client interface is the basis of the REST architecture and
 can be described in terms of guidelines targeting four aspects:
@@ -170,6 +171,8 @@ request parameters in a JSON document in which three parameters are of interest:
                                the normalisation options (e.g.,
                                $\{``format'': ``application/nquads''\}$).
 \end{enumerate}
+
+\newpage
 
 To retrieve the document in Fig. \ref{lst:annojson}, the following
 query can be used:
