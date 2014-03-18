@@ -1,5 +1,7 @@
-65 commits with 2433 additions and 1512 deletions:
+67 commits with 2437 additions and 1514 deletions:
 
+fc82f40 installation: Bower font-awesome (2014-03-13 16:57:17 +0100)
+98ce4af installation: setuptools version (2014-03-13 16:57:03 +0100)
 660da06 comments: login required for vote and report (2014-03-04 09:40:52 +0100)
 19ee119 installation: typeahead Grunt fix (2014-02-28 08:47:23 +0100)
 be024ac accounts: gettext import fix (2014-02-27 22:09:25 +0100)
