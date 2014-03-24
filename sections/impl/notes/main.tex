@@ -3,7 +3,7 @@
 Using the base annotation model as a starting point, the targeted document
 commenting feature can be implemented. In this scenario, the \textit{``where''}
 field of the base model needs to encode both the document identifier and the
-exact target of the annotation (e.g., the second page).
+exact target of the annotation (e.g., equation four on second page).
 
 In the current version of Invenio, records can have one or more documents
 associated, each of them with multiple versions. For example, during the CDS
@@ -33,11 +33,11 @@ nine so-called \textit{``markers''} which can identify valid targets:
   \item Table (T)
   \item Section (S): this could also refer to subsections as long as they
                      possess a proper identifier (e.g., Subsection 4.2 can be
-                     marked using $S.4: S.2$).
-  \item Paragraph (PP): this will likely refer to relative positions, such
+                     marked using either $S.4: S.2$ or $S.4.2$).
+  \item Paragraph (PP): this will most likely refer to relative locations, such
                         as \textit{``the third paragraph on the second page''}.
   \item Reference (R): a bibliographic citation, could prove useful in a
-                       scenario similar to the INSPIRE reference correction 
+                       scenario similar to the INSPIRE citation correction 
                        form presented in Section \ref{sec:motiv}.
   \item General (G): this allows specifying annotations which regard general
                      aspects, such as formatting issues (\textit{``the text is
@@ -46,11 +46,31 @@ nine so-called \textit{``markers''} which can identify valid targets:
                      be added''}).
 \end{enumerate}
 The letters between parentheses above denote the special markup that can be
-used by users for referring to the various document locations; for example,
+employed by users for referring to the various document locations; for example,
 \textit{``P.2: F.3a: equation system is not presumed''} is a valid annotation
-on subfigure $3a$ on the second page. Markers can be combined to form
+on subfigure $3a$ on the second page. As shown, markers can be combined to form
 hierarchic structures with no depth restrictions; this should facilitate the
-specification of precise, unambiguous locations.
+specification of precise, unambiguous locations. The \textit{specifiers} that
+accompany markers can have on of the following forms:
+\begin{itemize}
+  \item Single: \textit{``P.1''} (first page) or \textit{``S.A''} (section A).
+  \item Multiple: \textit{``F.1,3,4''} (figures one, three, and four).
+  \item Sub-locations: \textit{``S.1.1''} (subsection 1.1). Note that in this
+                       case the full stops have different semantics, depending on
+                       their positions: the first full stop will always separate
+                       markers from specifiers, while further ones will signal
+                       sub-locations.
+  \item Bibliographic: \textit{``R.[Doe08]''}; the characters between square
+                       brackets identify a bibliographic reference, and multiple
+                       such locations can be specified using commas
+                       (\textit{``R.[Doe08], [Doe09]''}).
+\end{itemize}
+
+Markers and specifiers can be combined in any manner; for example,
+\textit{''P.1: S.1.1: F.2,3a,4: equation system is not presumed''} is a valid
+annotation.  The colon (\textit{:}) is used as a delimiter between a
+marker-specifier pair and a block of plain text (the body of the annotations),
+or a new pair, as shown in the hierarchical annotations examples.
 
 This type of annotations can be inserted using the standard Invenio
 commenting facilities, in two different manners:
@@ -89,8 +109,7 @@ annotations are considered valid if complying with the following format:
 \end{verbatim}
 Square brackets denote optional elements, and the \texttt{\^} and \texttt{\$}
 symbols the beginning and end, respectively, of the text line; the line break
-is inserted purely for formatting reasons. Specifiers are the actual locations
-typed by the markers (e.g., page \textit{one}).
+is inserted purely for formatting reasons.
 
 While the final regular expression used for extracting the annotations is quite
 complex, it is composed of simple building blocks. For example, the section
@@ -117,7 +136,7 @@ grammar could be considered.
              expression is defined as the marker ($S$), followed by a full stop,
              followed by list of alpha-numeric characters of length equal or
              greater than $1$ (the global definition of $LOCATION$ is currently
-             used for almost all markers).}
+             used for all markers except citations).}
     \label{lst:regex}
 \end{figure}
 
@@ -157,8 +176,6 @@ For completeness, the workflow of document annotations is included in Fig.
   \label{fig:docanno}
 \end{figure}
 
-\FloatBarrier
-
 Finally, annotations can be previewed in a manner similar to the one presented
 in Fig. \ref{fig:noteview}. The current version proposes a two-column window,
 with one column dedicated to previewing the concerned document (currently the
@@ -197,4 +214,35 @@ designed in a manner addressing two issues:
            Equation 1). Clicking on the previewer pane allows adding a new
            annotation targeting the displayed page.}
   \label{fig:noteview}
+\end{figure}
+
+In order to obtain the aggregated view, two operations need to be applied.
+First, a query for retrieving the annotations on the requested document and
+page is issued to MongoDB; while the per-page view is the only one currently
+supported by the PDF viewer, more granular queries are also supported (e.g., get
+all annotations on figure three on second page).
+
+Secondly, the annotations need to be grouped by their common markers. This is
+achieved by building a tree structure, in which the leaf vertices contain the
+annotations, and others the various marker-location pairs; the root contains
+the page marker. For example, consider the following annotations:
+\begin{itemize}
+    \item P.1: S.2: F.3: this figure is too small
+    \item P.1: S.2: E.3: equation system is not presumed
+    \item P.1: L.23: typo?
+\end{itemize}
+The tree in Fig. \ref{fig:tree} is built. By applying a depth-first traversal,
+an aggregated view similar to the one in Fig. \ref{fig:noteview} can be
+obtained.
+
+\begin{figure}[!ht]
+  \centering
+  \fbox{\Tree [.P.1 [.S.2 [.F.3 \textit{this figure is too small} ]
+                    [.E.3 \textit{equation system is not presumed} ] ]
+              [ .L.23 [ \textit{typo?} ] ] ]}
+  \caption[Tree used for annotation aggregation.]
+          {Tree used for annotation aggregation. By traversing the structure in
+           a  depth-first manner, annotations can be aggregated by their common
+           markers and locations.}
+  \label{fig:tree}
 \end{figure}
