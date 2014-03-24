@@ -31,7 +31,7 @@ This model facilitated the implementation of an annotation system which allows
 adding metadata on any Web page of Invenio; users can add such annotations by
 using a dialog similar to the one in Fig. \ref{fig:annoform}.
 
-\begin{figure}[!ht]
+\begin{figure}
   \centering
   \fbox{\includegraphics[scale=0.395]{static/img/annoform.png}}
   \caption[Form allowing to add annotations on any Invenio page]
@@ -48,7 +48,7 @@ users to input data, displaying annotations is also possible.
 Annotations are stored in a MongoDB database \cite{ref:mongo} using the
 facilities provided by JSONAlchemy. This module allows defining a schema for
 JSON documents, in which the collection of fields and various restrictions on
-them can be defined; for example, the UUID is required for all annotations and
+them can be defined; for example, the UUID is required for all annotations, and
 the time stamp should have a standard format. Moreover, JSONAlchemy allows
 querying the stored objects (e.g., get all annotations with the target being
 the main page of CDS), and modifying them. A thin wrapper for adapting these
@@ -57,7 +57,7 @@ be used by the Flask blueprint, REST interface (see Subsection \ref{sec:pub}),
 or even other Invenio modules to access annotation data. An overview of the
 workflow is included in Fig. \ref{fig:baseanno}.
 
-\begin{figure}[!ht]
+\begin{figure}
   \centering
   \fbox{\includegraphics[scale=0.6]{static/dia/base_anno.jpeg}}
   \caption[Web page annotation workflow]

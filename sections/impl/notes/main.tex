@@ -15,8 +15,6 @@ chosen to implicitly attach annotations to the latest version of record
 documents; nevertheless, this can be changed with minimal effort due to the
 customisable nature of the JSON models.
 
-\newpage
-
 Regarding the document locations to which annotations can refer, after studying
 over one thousand comments from CDS review rounds, we have chosen a total of
 nine so-called \textit{``markers''} which can identify valid targets:
@@ -51,19 +49,19 @@ employed by users for referring to the various document locations; for example,
 on subfigure $3a$ on the second page. As shown, markers can be combined to form
 hierarchic structures with no depth restrictions; this should facilitate the
 specification of precise, unambiguous locations. The \textit{specifiers} that
-accompany markers can have on of the following forms:
+accompany markers can have one of the following forms:
 \begin{itemize}
   \item Single: \textit{``P.1''} (first page) or \textit{``S.A''} (section A).
-  \item Multiple: \textit{``F.1,3,4''} (figures one, three, and four).
+  \item Multiple: \textit{``F.1,3,4a''} (figures one and three, and subfigure 4a).
   \item Sub-locations: \textit{``S.1.1''} (subsection 1.1). Note that in this
-                       case the full stops have different semantics, depending on
+                       case the full stops have different purposes, depending on
                        their positions: the first full stop will always separate
                        markers from specifiers, while further ones will signal
                        sub-locations.
   \item Bibliographic: \textit{``R.[Doe08]''}; the characters between square
                        brackets identify a bibliographic reference, and multiple
                        such locations can be specified using commas
-                       (\textit{``R.[Doe08], [Doe09]''}).
+                       (\textit{``R.[Doe08], [2]''}).
 \end{itemize}
 
 Markers and specifiers can be combined in any manner; for example,
@@ -116,8 +114,10 @@ complex, it is composed of simple building blocks. For example, the section
 marker is defined in a single line of code, as shown in Fig. \ref{lst:regex}.
 Nevertheless, if the regular expression mechanism becomes too complex, or the
 user requirements change by including new semantic validation rules (e.g., all
-paragraphs need to be specified in relation to a section), the use of a
-grammar could be considered.
+paragraphs need to be specified in relation to a section), the use of a grammar
+could be considered\footnote{Regular expressions have the same expressive power
+as regular grammars (most restrictive in the Chomsky hierarchy) in formal
+language theory.}.
 
 \begin{figure}[!ht]
   \lstinputlisting[language=Python,
@@ -135,8 +135,8 @@ grammar could be considered.
             {Regular expression marker definition for sections. The regular
              expression is defined as the marker ($S$), followed by a full stop,
              followed by list of alpha-numeric characters of length equal or
-             greater than $1$ (the global definition of $LOCATION$ is currently
-             used for all markers except citations).}
+             greater than $1$ (the global definition of $LOCATION$ specifiers
+             is currently used for all markers except citations).}
     \label{lst:regex}
 \end{figure}
 
@@ -176,11 +176,14 @@ For completeness, the workflow of document annotations is included in Fig.
   \label{fig:docanno}
 \end{figure}
 
-Finally, annotations can be previewed in a manner similar to the one presented
+Annotations can be previewed in a manner similar to the one presented
 in Fig. \ref{fig:noteview}. The current version proposes a two-column window,
 with one column dedicated to previewing the concerned document (currently the
-supported format is PDF), and the other to displaying annotations. Coming
-back to the CDS review process use-case, the annotation display has been
+supported format is PDF), and the other to displaying annotations.
+
+\newpage
+
+Coming back to the CDS review process use-case, the annotation display has been
 designed in a manner addressing two issues:
 \begin{enumerate}
   \item Separate targeted annotation from free-text comments: even if a comment
@@ -191,13 +194,15 @@ designed in a manner addressing two issues:
           Dear authors,
 
           This is a very good paper, but I have the following remark:
-          P.2: F.3a: equation system is not presumed 
+          P.2: F.3a: equation system is not presumed
+
+          Best,
         \end{verbatim}
         only the remark on subfigure $3a$ on the second page will be displayed.
         The complete comments can still be accessed in the standard Invenio
         manner.
-  \item Aggregate remarks by location, to allow the authors in charge of
-        amending the paper to systematically follow them. As can be observed in
+  \item Aggregate remarks by location, such that the authors in charge of
+        amending the paper can systematically follow them. As can be observed in
         Fig. \ref{fig:noteview}, annotations are first grouped by page and then
         hierarchically, in a top--down manner, from the most general marker to
         the most particular one.
@@ -224,21 +229,23 @@ all annotations on figure three on second page).
 
 Secondly, the annotations need to be grouped by their common markers. This is
 achieved by building a tree structure, in which the leaf vertices contain the
-annotations, and others the various marker-location pairs; the root contains
+annotation objects, and others the various marker-location pairs; the root contains
 the page marker. For example, consider the following annotations:
 \begin{itemize}
     \item P.1: S.2: F.3: this figure is too small
+    \item P.1: S.2: F.4: this figure is too large
     \item P.1: S.2: E.3: equation system is not presumed
     \item P.1: L.23: typo?
 \end{itemize}
-The tree in Fig. \ref{fig:tree} is built. By applying a depth-first traversal,
-an aggregated view similar to the one in Fig. \ref{fig:noteview} can be
-obtained.
+The tree in Fig. \ref{fig:tree} is built for aggregating them. By applying a
+depth-first traversal, a view similar to the one in Fig.  \ref{fig:noteview}
+can be presented to users.
 
 \begin{figure}[!ht]
   \centering
-  \fbox{\Tree [.P.1 [.S.2 [.F.3 \textit{this figure is too small} ]
-                    [.E.3 \textit{equation system is not presumed} ] ]
+  \fbox{\small\Tree [.P.1 [.S.2 [.F.3 \textit{this figure is too small} ]
+                          [.F.4 \textit{this figure is too large} ]
+                          [.E.3 \textit{equation system is not presumed} ] ]
               [ .L.23 [ \textit{typo?} ] ] ]}
   \caption[Tree used for annotation aggregation.]
           {Tree used for annotation aggregation. By traversing the structure in

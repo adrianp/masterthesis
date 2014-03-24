@@ -57,7 +57,7 @@ described in Section \ref{sec:notes}, for which the conversions are as follows:
   \item The \texttt{hasTarget} field is encoded as the IRI to the record of the
         document being annotated, along with a OA \texttt{FragmentSelector}
         data type instance, which specifies to what part of the document the
-        annotation refers to (a marker such as \textit{``second paragraph on
+        annotation refers (a marker such as \textit{``second paragraph on
         third page''}, encoded in the manner described in
         Section \ref{sec:notes}). Note that if a method of accessing document
         fragments directly through a valid IRI is provided, specifying the
@@ -68,11 +68,12 @@ target field, which can be identified uniquely by an IRI.
 
 The end result of the translation operation is a JSON document which, apart
 from the fields described above, also contains the entire context definitions;
-this is denoted internally as the \textit{``inline''} or \textit{``full''}
-format. Other formats, such as the expanded or RDF/ N-Quads ones, can be
-obtained by simple calls to the PyLD API \cite{ref:pyld}. An example of an
-expanded JSON-LD representation of a document annotation is included in Fig.
-\ref{lst:annojson}.
+this is denoted internally as the \textit{``inline''}\footnote{As per Open
+Annotation specification.} or \textit{``full''} format. Other formats, such
+as the expanded or RDF/ N-Quads ones, can be obtained by simple calls to the
+PyLD API \cite{ref:pyld}, accessible through the JSONAlchemy wrapper. An example
+of an expanded JSON-LD representation of a document annotation is included in
+Fig.  \ref{lst:annojson}.
 
 \begin{figure}[!ht]
   \lstinputlisting[frame=tb,
@@ -124,8 +125,8 @@ can be described in terms of guidelines targeting four aspects:
                                      stored in a SQL database will be served to
                                      Web clients in a XML or JSON format).
   \item Resource manipulation: given an object representation, a client holds
-                               information to perform any editing or deletion
-                               action over the object.
+                               enough information necessary to perform any
+                               editing or deletion action over the object.
   \item Message description: request responses need to be self-descriptive,
                              specifying the actions clients need to undertake in
                              order to process them. For example, in the case of
@@ -144,13 +145,13 @@ can be described in terms of guidelines targeting four aspects:
 As previously mentioned, the new version of Invenio provides the basic building
 blocks for REST interfaces. Each module that desires to implement such a
 facility simply needs to define the endpoints, the methods clients can use to
-retrieve data (e.g., \texttt{GET} or \texttt{POST}) and the request template.
+retrieve data (e.g., \texttt{GET} or \texttt{POST}), and the request template.
 
 For the annotation use-case, one endpoint (\texttt{/api/annotations/export/}),
 accepting two request methods (\texttt{GET} and \texttt{POST}) is provided.
-Through the \texttt{GET} method clients can get annotation data in a format
-similar to the internal one, this being used, for example, to build the IRI
-supplied as the main object \texttt{@id} in the JSON-LD representation (see
+Through the \texttt{GET} method, clients can get annotation data in a format
+similar to the internal one, this being mostly used to build the IRI
+supplied as the main object's \texttt{@id} in the JSON-LD representation (see
 Fig. \ref{lst:annojson}). The parameters used for this type of request can be
 used to perform simple annotation queries; for example, to retrieve all
 annotations targeting the first page of any document a request to
@@ -191,9 +192,9 @@ of simple, unique, endpoints is provided, clients being allowed to make only
 the state transitions specified in the responses (e.g., the main annotation IRI
 identifier), responses contain all the information required to perform any
 operations over existing annotations, and all the responses from the server
-contain processing information (the JSON format is advertised in all
-responses).  Moreover, the communication is stateless and responses can be
-cached as they do not depend on client parameters.
+contain processing information (the JSON format is advertised in all response
+headers). Moreover, the communication is stateless and responses can be cached
+as they do not depend on client parameters.
 
 To sum up, Fig. \ref{fig:restanno} provides an overview of the Invenio
 annotation system, starting from the end-user interface, through the internal

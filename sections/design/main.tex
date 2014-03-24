@@ -15,7 +15,7 @@ the platform:
         identical feature set, as before this project.
   \item The targeted commenting use-case, presented in Section \ref{sec:motiv}
         should be considered of high-priority, as the described workflow, while
-        frequently used by the community, is  highly inefficient.
+        frequently used by the community, is inefficient.
   \item The new system should seamlessly integrate with the access control
         features of Invenio. For example, during the review period, records on
         CDS are restricted to only the participating authors and reviewers.
@@ -35,7 +35,7 @@ Invenio provide the full text usually as PDF documents and such, a proper
 solution must be implemented in order to allow making references inside them.
 
 The Pundit project is more complete in terms of features, allowing to annotate
-various content types out of the box (text, multimedia) and providing a rich
+various content types out of the box (text, multimedia), and providing a rich
 editor which allows embedding RDF graphs and attaching external files. This
 option was designed more as a standalone application and not as a lightweight
 wrapper like Annotator, providing features such as authentication or a
@@ -50,15 +50,15 @@ possible to simulate such a feature in both systems, it is worth noting that
 paper reviewers frequently take notes in offline mode (e.g., during commute),
 this being one of the reasons behind the employed markup. Using any of the two
 systems in offline mode for this purpose is mostly impossible, as they rely on
-a rich graphical interface for specifying the exact annotation targets. For
+rich graphical interfaces for specifying the exact annotation targets. For
 this project's purposes, both an interface and an offline editing mode should
 be provided.
 
 The careful evaluation of the existing alternatives lead us to consider
-implementing a custom solution which, on one hand, would satisfy all the user
-requirements and also allow for a gradual integration in the existing Invenio
-framework. Nevertheless, existing components and ideas would be reused and
-standard practices would be strictly followed, especially in terms of metadata
+implementing a custom solution which, would satisfy all the user requirements,
+and also allow for a gradual integration in the existing Invenio framework.
+Nevertheless, existing components and ideas would be reused and standard
+practices would be strictly followed, especially in terms of metadata
 dissemination.
 
 The next subsection will give an abstract overview of the proposed system,

@@ -33,12 +33,12 @@ link resources. A simple example is shown in Fig. \ref{fig:rdf}
   \caption[Example RDF graph]
           {Example RDF graph, source \cite{ref:rdfsyntax}. This graph
            can be summarised briefly as: The RDF syntax specification,
-           identified by a IRI, has a person characterised by its full name and
+           identified by an IRI, has a person characterised by its full name and
            personal Web page as editor.}
   \label{fig:rdf}
 \end{figure}
 
-It can be observed that this model is very well-suited for the annotations use
+It can be observed that this model is well-suited for the annotations use
 case. Metadata can be seen as a statement about a resource in the form (but not
 restricted to):
 
@@ -72,17 +72,18 @@ of elements, depending on the specific domain knowledge.
                    numbersep=4pt]
     {static/lst/rdf.xml}
     \caption[RDF/XML Example]
-            {RDF/XML Example, source \cite{ref:rdfsyntax}}
+            {RDF/XML Example, source \cite{ref:rdfsyntax}. Specific XML elements
+             are used to encode the RDF context in Fig. \ref{fig:rdf}.}
     \label{lst:rdf}
 \end{figure}
 
-Similar to the RDF/XML, an augmented version of the JavaScript Object Notation
+Similar to RDF/XML, an augmented version of the JavaScript Object Notation
 (JSON) format, JSON-LD, can also be used to serialise the data model; an
-in-detail description, in the usage context of the project is included in
+in-detail description, in the usage context of the project, is included in
 Section \ref{sec:json}.
 
 Relational databases, while not suitable for the graph structure of the RDF
-model, are the most used solution for storing such data. If a database stores
+model, are commonly used solution for storing such data. If a database stores
 only the triples it is called a \textit{triplestore}, and if the context is
 also included, a \textit{quad} store is employed. These stores can be queried
 using the SPARQL \cite{ref:sparql} language.
@@ -95,8 +96,8 @@ for invalid data or out-of-scope information, can become expensive in terms of
 computing resources.
 
 A simple solution is to deploy standard forms for guiding the users in the data
-collection process. The Pundit project discussed previously uses such a form
-for allowing users to input RDF statements. While this solution is fast to
+collection process. The previously discussed Pundit project uses such a visual
+form for allowing users to input RDF statements. While this solution is fast to
 develop due to the prevalence of the practice in Web applications, it also
 lacks in terms of extensibility and scalability; it can be seen that in order
 to be able to express complex RDF graphs, a considerable effort must be

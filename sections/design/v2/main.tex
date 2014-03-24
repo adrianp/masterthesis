@@ -56,13 +56,13 @@ colour scheme).
 Modernisation wise, a series of HTML5 technologies have been employed; the
 Bootstrap \cite{ref:bootstrap} frontend framework is being used for defining a
 number of interface elements (dialogs, menus, etc.), and updated versions of
-various JavaScript libraries for delivering a fluid user experience in line
-with modern practices and patterns.
+various JavaScript libraries employed for delivering a fluid user experience in
+line with modern practices and patterns.
 
 A new deployment process has been developed, replacing the GNU build system
 with a Python-specific process for supplying the backend dependencies, and a
-specialised workflow for static files, such as JavaScript libraries and style
-sheets.
+specialised workflow for \textit{static} files, such as JavaScript libraries
+and style sheets.
 
 Performance wise improvements were also targeted, indirectly by adopting new
 practices while re-witting legacy code, and directly by employing new
@@ -99,8 +99,6 @@ around the commenting facilities already provided by Invenio, this module was
 constantly maintained and improved, any general additions being pushed
 back to mainline.
 
-\newpage
-
 Other additions have been the result of identifying new requirements while
 developing the annotation capabilities, namely:
 \begin{enumerate}
@@ -130,7 +128,7 @@ documents, PyLD \cite{ref:pyld} was back-ported in order to work properly.
 Building this demonstrator was facilitated by the introduction of a new
 distinct package, \texttt{invenio-demosite}, which allows developers to quickly
 set up a custom Invenio instance. A number of modified HTML templates were
-created, a website tutorial feature developed in JavaScript was developed, and
+created, a JavaScript website tutorial feature was developed, and
 record data along with the necessary deployment routine were put in
 place over this standardised customisation package.
 

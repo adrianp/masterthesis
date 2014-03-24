@@ -1,5 +1,9 @@
-67 commits with 2437 additions and 1514 deletions:
+71 commits with 2453 additions and 1525 deletions:
 
+251a5ec installation: Pillow img requirement (2014-03-20 11:28:06 +0100)
+396bb4f jsonalchemy: JSON-LD tweaks (2014-03-19 11:36:15 +0100)
+e795fd3 base: PDFTK path discovery (2014-03-19 11:36:09 +0100)
+28ccfe1 previewer: template fixes (2014-03-19 11:36:04 +0100)
 fc82f40 installation: Bower font-awesome (2014-03-13 16:57:17 +0100)
 98ce4af installation: setuptools version (2014-03-13 16:57:03 +0100)
 660da06 comments: login required for vote and report (2014-03-04 09:40:52 +0100)

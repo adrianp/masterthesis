@@ -1,8 +1,8 @@
 %!TEX root=../../../main.tex
 
 Exporting metadata in a syntactically standard format is a necessary step
-towards interoperability between systems collection user annotation, but not a
-sufficient one. The semantics of the metadata also need to have an agreed form;
+towards interoperability between systems collecting user annotations, but not a
+sufficient one. The semantics of metadata also need to have an agreed form;
 in the context of RDF, applications exporting annotations could also supply an
 ontology which describes what the meaning of data is.
 
@@ -13,7 +13,7 @@ describe the most common use-cases of annotations.
 
 The minimal basis of OA is defined as a RDF graph in which annotations have a
 target, identified by an Internationalised Resource Identifier (IRI), and a
-body. An example graph is included in Figure \ref{fig:oa}. Further restrictions
+body; an example graph is included in Figure \ref{fig:oa}. Further restrictions
 regarding the types of these elements are not enforced; for example, the target
 of an annotation can be another annotation. Nevertheless, it is expected that
 the type is specified when serialising the representation, in order to
@@ -43,7 +43,7 @@ a textbook are describing a target image.
   \caption[Twitter message used to annotate an image region using Open Annotation.]
           {More complex example usage of Open Annotation, source \cite{ref:oahubble}.
            A Twitter message is used as the body for an annotation targeted at a
-           specific region of an image. The target attribute points at the whole
+           specific region of an image. The \textit{target} attribute points at the whole
            image IRI, but is constrained by rectangle coordinates
            ($x, y, w, h$).}
   \label{fig:oahubble}

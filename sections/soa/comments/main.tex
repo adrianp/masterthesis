@@ -7,7 +7,7 @@ include facilities that allow commenting the principal features, displayed
 content, or simply facilitate user engagement.  Notable examples include most
 web blogs, which usually allow comments on posts, YouTube, which encourages
 users to discuss videos, or Facebook which augments the social aspect by
-embedding comments on all the updates posted by its users.
+embedding comments on all updates posted by its users.
 
 An emerging trend among web applications is represented by the usage of the
 social capabilities of one platform for augmenting another application or
@@ -50,16 +50,18 @@ Kahan et al. \cite{ref:annotea} proposed the Annotea system, which allows
 adding structured notes on Web Documents using the Resource Description
 Framework (RDF) format. Annotations are viewed as statements made by the author
 about the document. Annotea uses the Amaya \cite{ref:amaya} editor on the
-frontend, and a generic RDF database accessible through HTTP server for storage.
+frontend, and a generic RDF database accessible through a HTTP server for
+storage.
 
 The Annotator project \cite{ref:annotator} allows developers to embed a special
 widget on their web pages, in order to enable users to annotate any available
 textual content, as exemplified in Fig. \ref{fig:annotator}.  It features a
 JavaScript front-end, annotations being saved in the JavaScript Object Notation
-format in order to be stored on the server side (the reference implementation
-features a Python wrapper around Elasticsearch \cite{ref:elasearch}).
+(JSON) format in order to be stored on the server side (the reference
+implementation features a Python wrapper around Elasticsearch
+\cite{ref:elasearch}).
 
-\begin{figure}[!ht]
+\begin{figure}[p]
   \centering
   \fbox{\includegraphics[scale=0.55]{static/img/annotator.png}}
   \caption[Interface of the Annotator project]
@@ -87,12 +89,12 @@ annotate any Web page, but it provides more features in terms of formatting and
 structuring the annotations. For example, it allows generating RDF triples, as
 exemplified in Fig. \ref{fig:pundit}.
 
-\begin{figure}[!ht]
+\begin{figure}[p]
   \centering
   \fbox{\includegraphics[scale=0.397]{static/img/pundit.png}}
   \caption[Interface of the Pundit project]
           {Interface of the Pundit project. Like Annotator, it allows
-           inserting annotations into Web pages, featuring a rich editor
+           annotating Web pages, featuring a rich editor
            including RDF triples creation support (right-hand-side), and
            the possibility to link various pieces of information
            (left-hand-side).}
@@ -128,17 +130,17 @@ across documents, they also surpass current online applications in terms of
 possible methods of highlighting and annotating content. Figure
 \ref{fig:xournal} shows a brief usage example of the Xournal open source tool,
 which was inspired by Microsoft Windows Journal. Applications such as Adobe
-Portable Document Format (PDF) Reader or the Mendeley reference manager provide
-similar capabilities, along with the possibility of storing and sharing
-annotations online. Moreover, it is worth noting that the interfaces used by
-such applications are usually more familiar to users, due to their longer life
-span. The resource linking capabilities of online tools along with the
-annotation editing capabilities of offline software could prove to be a
-powerful combination.
+Portable Document Format (PDF) Reader \cite{ref:adobe} or the Mendeley
+\cite{ref:mendeley} reference manager provide similar capabilities, along with
+the possibility of storing and sharing annotations online. Moreover, it is
+worth noting that the interfaces used by such applications are usually more
+familiar to users, due to their longer life span. The resource linking
+capabilities of online tools along with the annotation editing capabilities of
+offline software could prove to be a powerful combination.
 
 \begin{figure}[!ht]
   \centering
-  \fbox{\includegraphics[scale=0.7]{static/img/xournal.png}}
+  \fbox{\includegraphics[scale=0.8]{static/img/xournal.png}}
   \caption{Document annotated using Xournal}
   \label{fig:xournal}
 \end{figure}

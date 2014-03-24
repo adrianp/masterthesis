@@ -27,16 +27,6 @@ supplementary information (e.g., page number) needs to also be supplied, in the
 same manner OA uses constraints. The model is briefly summarised in Fig.
 \ref{fig:datamodel}.
 
-\begin{figure}[!ht]
-  \centering
-  \fbox{\includegraphics[scale=0.7]{static/dia/datamodel.jpeg}}
-  \caption[Basic annotation data model]
-          {Basic annotation data model. A series of base fields are defined,
-           upon which various annotation types can build more complex
-           structures, both by adding new fields or modifying existing ones.}
-  \label{fig:datamodel}
-\end{figure}
-
 In terms of the system that should provide the annotation facilities, the
 following components need to be considered:
 \begin{itemize}
@@ -54,16 +44,6 @@ through an equivalent of the controller in the Model--View--Controller pattern.
 Thus, the data flow of the annotation system can be summarised as in Fig.
 \ref{fig:dataflow}.
 
-\begin{figure}[!ht]
-  \centering
-  \fbox{\includegraphics[scale=0.7]{static/dia/dataflow.jpeg}}
-  \caption[Annotation system data flow]
-          {Annotation system data flow. End-user create new annotations using
-           the specialised editors, content being persisted in a database.
-           Metadata can be publicised to the interested third parties.}
-  \label{fig:dataflow}
-\end{figure}
-
 One issue that needs to be considered regarding the extensible annotation model
 regards the method used for data persistence. Invenio currently uses a SQL
 database, and this model does not fit well the proposed definitions. For
@@ -79,3 +59,23 @@ documents, and the project fully leveraged this possibility, as explained in the
 next sections. Apart from solving the issue described above, this method also
 facilitates distribution of annotation data to third parties, as JSON is widely
 used on the Web for these purposes.
+
+\begin{figure}[!ht]
+  \centering
+  \fbox{\includegraphics[scale=0.7]{static/dia/datamodel.jpeg}}
+  \caption[Basic annotation data model]
+          {Basic annotation data model. A series of base fields are defined,
+           upon which various annotation types can build more complex
+           structures, both by adding new fields or modifying existing ones.}
+  \label{fig:datamodel}
+\end{figure}
+
+\begin{figure}[!ht]
+  \centering
+  \fbox{\includegraphics[scale=0.7]{static/dia/dataflow.jpeg}}
+  \caption[Annotation system data flow]
+          {Annotation system data flow. End-user create new annotations using
+           the specialised editors, content being persisted in a database.
+           Metadata can be publicised to interested third parties.}
+  \label{fig:dataflow}
+\end{figure}
