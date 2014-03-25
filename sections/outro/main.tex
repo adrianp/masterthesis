@@ -11,12 +11,12 @@ on specific document locations, such as pages, sections, figures or equations an
 consider the necessary corrections.
 
 The base building blocks of the framework are provided, along with
-implementations of the Web page annotator, and document targeted commenting
-facility. Moreover, a method of disseminating annotation data conforming with
-Open Annotation RDF model is included; this makes use of modern
-technologies such as the JSON-LD serialisation format or REST Web services in
-order to bestow a streamlined circulation workflow for any third-party
-interested in accessing Invenio metadata.
+implementations of the Web page annotator and document targeted commenting
+facility. Moreover, a method for disseminating annotation data, conforming with
+Open Annotation RDF model, is included; this makes use of modern technologies
+such as the JSON-LD serialisation format or REST Web services in order to
+bestow a streamlined circulation workflow for any third-party interested in
+accessing Invenio metadata.
 
 A number of possible future improvements remain. In terms of the general
 annotation framework, more of the currently existing Invenio features for
@@ -31,9 +31,9 @@ Regarding document targeted annotations, a more robust method of displaying the
 concerned files is required. For PDF documents, Mozilla's PDF.js
 appears to be a viable solution, as long as a method of rendering complex files
 on server-side is implemented, and certain cross-browser compatibility issues
-are resolved; another solution can be Multivio. Such a solution could allow for
-a more attractive user interface, in which users could, for example, visually
-highlight text fragments, in the same manner employed by desktop applications.
+are resolved; another option can be Multivio. Such a solution could allow for
+a more attractive interface, using which users could, for example, visually
+highlight text fragments, in the same manner desktop applications allow.
 Another direction regards the validation of user input; either a solution as
 XTiger can be employed to restrict input on the user-side, or a more complex
 grammar can replace the current regular expression backend. Moreover, a
@@ -41,7 +41,7 @@ richer collection of markers could be considered, covering, for example, the
 differences between reviews targeting stylistic, grammatical, or factual issues.
 
 Finally, the REST  interface could be employed not only for data output, but
-also for input; this could allow, for example, to import annotations from other
+also for input; this may allow, for example, to import annotations from other
 systems. The Invenio framework already supports data input through its REST
 framework, as implemented, for example, by the ZENODO deposition API. Apart
 from importing linked Web  data, annotations from desktop applications such as

@@ -9,11 +9,11 @@ In the current version of Invenio, records can have one or more documents
 associated, each of them with multiple versions. For example, during the CDS
 paper review rounds, a single record will be used to upload multiple drafts of
 the same document. Thus, annotations need to be attached to the correct version
-of documents, in order to avoid displaying obsolete information. As the document
-storage model is currently changing for the next version of Invenio, we have
-chosen to implicitly attach annotations to the latest version of record
-documents; nevertheless, this can be changed with minimal effort due to the
-customisable nature of the JSON models.
+of documents, in order to avoid displaying obsolete information. As the
+document storage and handling workflow is currently changing for the next
+version of Invenio, we have chosen to implicitly attach annotations to the
+latest version of record documents; nevertheless, this can be changed with
+minimal effort due to the customisable nature of the JSON models.
 
 Regarding the document locations to which annotations can refer, after studying
 over one thousand comments from CDS review rounds, we have chosen a total of
@@ -65,7 +65,7 @@ accompany markers can have one of the following forms:
 \end{itemize}
 
 Markers and specifiers can be combined in any manner; for example,
-\textit{''P.1: S.1.1: F.2,3a,4: equation system is not presumed''} is a valid
+\textit{``P.1: S.1.1: F.2,3a,4: equation system is not presumed''} is a valid
 annotation.  The colon (\textit{:}) is used as a delimiter between a
 marker-specifier pair and a block of plain text (the body of the annotations),
 or a new pair, as shown in the hierarchical annotations examples.
@@ -83,7 +83,7 @@ commenting facilities, in two different manners:
         online access to the Invenio instance is not possible. Users can write
         their review, decorate it with the markup and add it later through the
         online form described above in order to be included with the rest of the
-        comments. This is the reason for the markup being visible to the users
+        comments. This is the reason for the markup being visible to the users,
         and not implicit, directly encoded in the system by means of, for
         example, an interface similar to the one in Fig. \ref{fig:noteview}.
 \end{itemize}
@@ -93,7 +93,7 @@ commenting facilities, in two different manners:
   \fbox{\includegraphics[scale=0.381]{static/img/commentform.png}}
   \caption[Invenio commenting form allowing annotation markup]
           {Invenio commenting form allowing annotation markup. To add remarks
-           on any document element users can employ the markup described on the
+           on any document element users, can employ the markup described on the
            right-hand-side.}
   \label{fig:noteform}
 \end{figure}
@@ -199,7 +199,7 @@ designed in a manner addressing two issues:
           Best,
         \end{verbatim}
         only the remark on subfigure $3a$ on the second page will be displayed.
-        The complete comments can still be accessed in the standard Invenio
+        Complete comments can still be accessed in the standard Invenio
         manner.
   \item Aggregate remarks by location, such that the authors in charge of
         amending the paper can systematically follow them. As can be observed in
@@ -225,7 +225,7 @@ In order to obtain the aggregated view, two operations need to be applied.
 First, a query for retrieving the annotations on the requested document and
 page is issued to MongoDB; while the per-page view is the only one currently
 supported by the PDF viewer, more granular queries are also supported (e.g., get
-all annotations on figure three on second page).
+all annotations on line three of table four).
 
 Secondly, the annotations need to be grouped by their common markers. This is
 achieved by building a tree structure, in which the leaf vertices contain the
@@ -250,6 +250,6 @@ can be presented to users.
   \caption[Tree used for annotation aggregation.]
           {Tree used for annotation aggregation. By traversing the structure in
            a  depth-first manner, annotations can be aggregated by their common
-           markers and locations.}
+           markers and location specifiers.}
   \label{fig:tree}
 \end{figure}

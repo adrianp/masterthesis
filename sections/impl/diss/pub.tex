@@ -33,7 +33,7 @@ simple conversions. Let us consider the targeted annotations use-case,
 described in Section \ref{sec:notes}, for which the conversions are as follows:
 \begin{itemize}
   \item The main identifier of the resource is an IRI pointing to an endpoint of
-        the Invenio installation which can supply annotations in the internal
+        the Invenio installation, which can supply annotations in the internal
         JSON format; this should not be frequently used, but is included for
         completeness. The type of the resource is \texttt{Annotation} in the
         OA vocabulary.
@@ -41,8 +41,8 @@ described in Section \ref{sec:notes}, for which the conversions are as follows:
         the user that created the annotation. Recall that, internally, we store
         only an identifier, which can be used to retrieve all other associated
         information, such as the name or email address. If, instead of applying
-        the explicit conversion process, the JSON-LD compaction routine would be
-        used, the mentioned information would need to be directly included in
+        the explicit conversion process, the JSON-LD compaction routine is
+        used, the mentioned information needs to be directly included in
         the annotation JSON model, resulting in duplication of data. Another
         solution would be to provide only minimal information regarding users,
         namely an IRI pointing to a complete profile\footnote{This is currently
@@ -191,10 +191,10 @@ The proposed mechanism closely follows the REST guidelines: only a minimal set
 of simple, unique, endpoints is provided, clients being allowed to make only
 the state transitions specified in the responses (e.g., the main annotation IRI
 identifier), responses contain all the information required to perform any
-operations over existing annotations, and all the responses from the server
-contain processing information (the JSON format is advertised in all response
-headers). Moreover, the communication is stateless and responses can be cached
-as they do not depend on client parameters.
+operations over existing annotations, and all the messages from the server
+contain processing information (the JSON format is advertised inside headers).
+Moreover, the communication is stateless and responses can be cached as they do
+not depend on client parameters.
 
 To sum up, Fig. \ref{fig:restanno} provides an overview of the Invenio
 annotation system, starting from the end-user interface, through the internal
