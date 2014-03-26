@@ -26,8 +26,7 @@ preceded by the ``@'' token; the most commonly used ones are:
                         generally of RDF nodes); for example, person names have
                         string type.
   \item \texttt{@value}: used to specify the actual data associated with a
-                         property in the RDF graph; in JSON terms, this is the
-                         value of a specific property. In the example above, the
+                         property in the RDF graph. In the example above, the
                          \textit{``name''} property could have the value
                          \textit{``John Doe''}.
 \end{itemize}
@@ -146,7 +145,7 @@ applied (\textit{``name''} is replaced by \textit{``full-name''}). If no new
 context is supplied, the expanded JSON-LD document is retrieved. This should be
 the preferred communication method between applications interchanging JSON-LD
 data. It is interesting to note that the specification allows sending an IRI to
-a new context through a HTTP Link Header \cite{ref:rfc5988}, thus eliminating
+a new context through an HTTP Link Header \cite{ref:rfc5988}, thus eliminating
 the need for sending large JSON payloads.
 
 While the above examples are trivial, more complex modelling and dissemination
