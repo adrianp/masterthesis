@@ -6,7 +6,7 @@ that metadata can be shared across ecosystems in order to allow for new
 connections between information resources to be established. Thus, the usage of
 standardised annotation dissemination formats is necessary.
 
-The systems presented in the previous subsection make use of different forms of
+The systems presented in the previous section make use of different forms of
 RDF structures in order to represent annotations both internally and
 externally.  RDF \cite{ref:rdf} is a model defined by the World Wide Web
 Consortium (W3C) to be used for online data interchange. The main idea behind
@@ -27,7 +27,7 @@ identifies a resource through a representation of its primary access
 mechanism. Throughout this thesis, only the IRI term will be utilised.} to
 link resources. A simple example is shown in Fig. \ref{fig:rdf}
 
-\begin{figure}[!ht]
+\begin{figure}[p]
   \centering
   \fbox{\includegraphics[scale=1]{static/img/rdf.png}}
   \caption[Example RDF graph]
@@ -60,7 +60,7 @@ standard set, the Dublin Core Metadata Element Set \cite{ref:dc} and a
 placeholder set; in real use-cases, each Web application can define its own set
 of elements, depending on the specific domain knowledge.
 
-\begin{figure}[!ht]
+\begin{figure}[p]
   \lstinputlisting[frame=tb,
                    captionpos=b,
                    numbers=none,
@@ -80,13 +80,15 @@ of elements, depending on the specific domain knowledge.
 Similar to RDF/XML, an augmented version of the JavaScript Object Notation
 (JSON) format, JSON-LD, can also be used to serialise the data model; an
 in-detail description, in the usage context of the project, is included in
-Section \ref{sec:json}.
+Subsection \ref{sec:json}.
 
 Relational databases, while not suitable for the graph structure of the RDF
 model, are commonly used solution for storing such data. If a database stores
 only the triples it is called a \textit{triplestore}, and if the context is
 also included, a \textit{quad} store is employed. These stores can be queried
 using the SPARQL \cite{ref:sparql} language.
+
+\newpage
 
 While RDF provides a standard method for disseminating data, it is mainly
 purposed for machine manipulation. Taking the RDF/XML format as an example, it
@@ -128,6 +130,8 @@ RDF/XML.
              element and used to build the form inside the XHTML body.}
   \label{lst:xtiger}
 \end{figure}
+
+\newpage
 
 Special constructs for repeating components across the resulting document can
 ease the creation of complex structures. RDF graphs can be constructed by using

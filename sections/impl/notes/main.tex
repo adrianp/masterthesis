@@ -30,7 +30,7 @@ nine so-called \textit{``markers''} which can identify valid targets:
   \item Equation (E)
   \item Table (T)
   \item Section (S): this could also refer to subsections as long as they
-                     possess a proper identifier (e.g., Subsection 4.2 can be
+                     possess a proper identifier (e.g., Subsection 4.2.1 can be
                      marked using either $S.4: S.2$ or $S.4.2$).
   \item Paragraph (PP): this will most likely refer to relative locations, such
                         as \textit{``the third paragraph on the second page''}.
@@ -48,8 +48,12 @@ employed by users for referring to the various document locations; for example,
 \textit{``P.2: F.3a: equation system is not presumed''} is a valid annotation
 on subfigure $3a$ on the second page. As shown, markers can be combined to form
 hierarchic structures with no depth restrictions; this should facilitate the
-specification of precise, unambiguous locations. The \textit{specifiers} that
-accompany markers can have one of the following forms:
+specification of precise, unambiguous locations.
+
+\newpage
+
+The \textit{specifiers} that accompany markers can have one of the following
+forms:
 \begin{itemize}
   \item Single: \textit{``P.1''} (first page) or \textit{``S.A''} (section A).
   \item Multiple: \textit{``F.1,3,4a''} (figures one and three, and subfigure 4a).
@@ -144,7 +148,7 @@ language theory.}.
 
 Extracted annotations will be saved in a JSON document complying with the
 JSONAlchemy template, in the MongoDB database. It is worth noting that these
-annotations are stored along with the ones described Subsection \ref{sec:gra}
+annotations are stored along with the ones described Section \ref{sec:gra}
 in the same \textit{collection} (equivalent of a SQL table); this is made
 possible by the fact that the database accepts dynamic schemas and not rigid,
 pre-defined ones.

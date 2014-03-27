@@ -16,19 +16,27 @@
 \usepackage{amssymb}
 \usepackage{appendix}
 \usepackage{caption}
+\usepackage{emptypage}
+\usepackage{fancyhdr}
 \usepackage[left=2.5cm,right=2cm,top=3cm,bottom=3cm,twoside]{geometry}
 \usepackage{graphicx}
 \usepackage[hidelinks]{hyperref}
 \usepackage{listings}
 \usepackage{makeidx}
+\usepackage{nopageno}
 \usepackage{pdfpages}
 \usepackage{placeins}
 \usepackage{qtree}  % in texlive-humanities
 \usepackage{standalone}
 \usepackage{subcaption}
+\usepackage{titlesec}
 
 \usepackage{epstopdf}  % load after graphic[s,x]
 
+\titleformat{\chapter}{\normalfont\huge}{\thechapter.}{20pt}{\huge}
+\pagestyle{myheadings}
+\renewcommand{\chaptermark}[1]{ \markboth{#1}{} }
+\renewcommand{\sectionmark}[1]{ \markright{#1}{} }
 
 %% bold float labels
 \DeclareCaptionLabelFormat{myformat}{\textbf{#1}~\textbf{#2}}
@@ -44,7 +52,7 @@
 %\setlength{\parskip}{1ex}
 
 %% Section number format
-\renewcommand*\thesection{\arabic{section}}
+%\renewcommand*\thesection{\arabic{section}}
 
 %% Give numbers to subsubsections and add them to index
 \setcounter{secnumdepth}{3}
@@ -91,102 +99,103 @@
   \cleardoublepage
 
   \pagenumbering{arabic}
-  %\pagestyle{headings}
 
-  \section{Introduction}
+  \chapter{Introduction}
     \label{sec:intro}
 
-    \subsection{Invenio Digital Library Platform}
+    \section{Invenio Digital Library Platform}
       \label{sec:invenio}
       \input{sections/intro/invenio/main.tex}
 
-      \subsubsection{CERN Document Server}
+      \newpage
+
+      \subsection{CERN Document Server}
         \label{sec:cds}
         \input{sections/intro/invenio/cds.tex}
 
-    \subsection{Motivation}
+    \section{Motivation}
       \label{sec:motiv}
-      \input{sections/intro/motiv/main.tex}
+        \input{sections/intro/motiv/motiv.tex}
 
-    \input{sections/intro/main.tex}
+      \subsection{Use Cases}
+        \label{sec:usecases}
+        \input{sections/intro/motiv/main.tex}
 
   \cleardoublepage
 
-  \section{State of the Art}
+  \chapter{State of the Art}
     \label{sec:soa}
     \input{sections/soa/main.tex}
 
-    \subsection{Commenting and Annotation Systems}
+    \section{Commenting and Annotation Systems}
       \label{sec:comments}
       \input{sections/soa/comments/main.tex}
 
     \clearpage
 
-    \subsection{Linked and Structured Data}
+    \section{Linked and Structured Data}
       \label{sec:data}
       \input{sections/soa/data/main.tex}
 
-      \subsubsection{Open Annotation}
+      \subsection{Open Annotation}
         \label{sec:oa}
         \input{sections/soa/data/oa.tex}
 
   \cleardoublepage
 
-  \section{System Design}
+  \chapter{System Design}
     \label{sec:design}
     \input{sections/design/main.tex}
 
-    \subsection{Annotation Framework}
+    \section{Annotation Framework}
       \label{sec:anno}
       \input{sections/design/anno/main.tex}
 
-    \FloatBarrier
-
-    \subsection{Invenio Framework}
+    \section{Invenio Framework}
       \label{sec:v2}
       \input{sections/design/v2/main.tex}
 
   \cleardoublepage
 
-  \section{Implementation}
+  \chapter{Implementation}
     \label{sec:impl}
     \input{sections/impl/main.tex}
 
-    \subsection{General Resource Annotator}
+    \section{General Resource Annotator}
       \label{sec:gra}
       \input{sections/impl/gra/main.tex}
 
     \newpage
 
-    \subsection{Targeted Document Annotations}
+    \section{Targeted Document Annotations}
       \label{sec:notes}
       \input{sections/impl/notes/main.tex}
 
     \clearpage
 
-    \subsection{Dissemination}
+    \section{Dissemination}
       \label{sec:diss}
       \input{sections/impl/diss/main.tex}
 
-      \subsubsection{JavaScript Object Notation for Linked Data}
+      \subsection{JavaScript Object Notation for Linked Data}
         \label{sec:json}
         \input{sections/impl/diss/json.tex}
 
       \clearpage
 
-      \subsubsection{Annotation Publishing}
+      \subsection{Annotation Publishing}
         \label{sec:pub}
         \input{sections/impl/diss/pub.tex}
 
     \clearpage
 
-    \subsection{Future Directions}
+    \section{Future Directions}
         \label{sec:future}
         \input{sections/impl/future/main.tex}
 
   \cleardoublepage
 
-  \section{Conclusions}
+  \chapter{Conclusions}
     \label{sec:outro}
     \input{sections/outro/main.tex}
 

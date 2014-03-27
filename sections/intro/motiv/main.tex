@@ -1,11 +1,11 @@
 %!TEX root=../../../main.tex
 
-The initial motivation for this project arose from a use-case originating on
-CDS.  Here, the record commenting facilities of Invenio are often used by the
-high-energy physics collaborations in order to review new papers in their
-pre-publishing stage.  These collaborations use special workflows with multiple
-commenting rounds for restricted drafts, necessary for amending potential
-issues before making research results public \cite{ref:ludmila}.
+The first considered use-case was one that originated on CDS. Here, the record
+commenting facilities of Invenio are often employed by the high-energy physics
+collaborations in order to review new papers in their pre-publication stage.
+These collaborations use special workflows with multiple commenting rounds for
+restricted drafts, necessary for amending potential issues before making
+research results public \cite{ref:ludmila}.
 
 In order to reference specific parts of the discussed papers, reviewers often
 use a format similar to the following:
@@ -22,9 +22,9 @@ use a format similar to the following:
 This format is also employed when the original paper authors respond to the
 corrections, as shown in Fig. \ref{fig:comments}.
 
-\begin{figure}[!ht]
+\begin{figure}[p]
   \centering
-  \fbox{\includegraphics[scale=0.5]{static/img/comments.png}}
+  \fbox{\includegraphics[scale=0.55]{static/img/comments.png}}
   \caption[Example of comments during the paper review phase on CDS]
           {Example of comments during the paper review phase on CDS. The author
            of a paper responds to corrections by referencing text line numbers.}
@@ -50,19 +50,17 @@ presents a number of issues:
 Thus, a solution for solving these issues, while preserving the reviewing
 workflow to which the end-users got accustomed to was required.
 
-% NO NEW PAGE HERE!
-
 Aside from pre-publication reviews, such targeted notes could also be seen
 useful for annotating resources (textual, multimedia or other formats). While
 standard comments are sufficient for discussing general aspects regarding the
 content, allowing annotations on various elements such as pages, figures or
 paragraphs could prove useful for enriching the content and facilitating its
-dissemination. Moreover, while comments often include a social aspect,
+dissemination. Moreover, although comments often include a social aspect,
 annotations could also be used in a private manner, for each user's self study.
 
-% NO NEW PAGE HERE!
+\newpage
 
-Another motivation emerges from the need to consolidate a number of features
+Another requirement emerges from the need to consolidate a number of features
 present in Invenio and its deployed variants (CDS, INSPIRE) which share a number
 of similarities:
 \begin{enumerate}
@@ -72,16 +70,16 @@ of similarities:
     allows users to add brief annotations to records mainly in order to
     organise and categorise them. Can be public, personal to each user, or
     shared between groups.
-  \item Baskets: allow users to create collections of records. Similar to tags,
-    can be private or shared.
+  \item Baskets: allow users to create collections of records and annotate them.
+    Similar to tags, can be private or shared.
 \end{enumerate}
 
 Apart from these general Invenio features, certain deployments integrate their
-own homologous features. One example is INSPIRE, which implemented a custom
-form for allowing users to suggest corrections for the citation list of papers
-as the one in Fig. \ref{fig:inspire}. This can be seen as a particular use-case
-of the record document review practices previously described, in which only the
-reference list is considered.
+own homologous functionalities. One example is INSPIRE, which implemented a
+custom form for allowing users to suggest corrections for the citation list of
+papers as the one in Fig. \ref{fig:inspire}. This can be seen as a particular
+use-case of the record document review practices previously described, in which
+only the reference list is considered.
 
 \begin{figure}[!ht]
   \centering
@@ -93,8 +91,8 @@ reference list is considered.
   \label{fig:inspire}
 \end{figure}
 
-A final issue motivating this work is related to the dissemination of metadata.
-As mentioned, Invenio already includes features facilitating record harvesting
-in compliance with the OAI protocol, but currently does not implement any
-specific mechanism for exporting user-generated metadata, which can provide
-more context.
+Finally, the high demand for a metadata dissemination facility has motivated
+this project. As mentioned, Invenio already includes features enabling record
+harvesting in compliance with the OAI protocol, but currently does not
+implement any specific mechanism for exporting user-generated metadata, which
+can provide more context to consumers.

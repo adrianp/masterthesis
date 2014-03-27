@@ -61,7 +61,7 @@ JavaScript front-end, annotations being saved in the JavaScript Object Notation
 implementation features a Python wrapper around Elasticsearch
 \cite{ref:elasearch}).
 
-\begin{figure}[p]
+\begin{figure}[!ht]
   \centering
   \fbox{\includegraphics[scale=0.55]{static/img/annotator.png}}
   \caption[Interface of the Annotator project]
@@ -89,7 +89,7 @@ annotate any Web page, but it provides more features in terms of formatting and
 structuring the annotations. For example, it allows generating RDF triples, as
 exemplified in Fig. \ref{fig:pundit}.
 
-\begin{figure}[p]
+\begin{figure}[!ht]
   \centering
   \fbox{\includegraphics[scale=0.397]{static/img/pundit.png}}
   \caption[Interface of the Pundit project]
@@ -108,7 +108,7 @@ different domains.
 
 Pundit is designed as a client--server application. The JavaScript client
 communicates with the backend through the exposed Representational State
-Transfer (REST)\footnote{See Section \ref{sec:pub} for more details regarding
+Transfer (REST)\footnote{See Subsection \ref{sec:pub} for more details regarding
 the REST architecture.} interface, which can also be used by third party
 plugins.  Annotations are stored in an RDF triple store which exposes a standard
 SPARQL \cite{ref:sparql} endpoint. The open nature of the software facilitates
