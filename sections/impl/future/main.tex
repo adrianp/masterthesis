@@ -1,0 +1,37 @@
+%!TEX root=../../../main.tex
+
+The implemented elements presented previously provide a strong basis upon which
+future related projects can build upon, both in order to improve and extend the
+existing annotation facilities.
+
+In terms of the general framework, more of the currently existing Invenio
+features for capturing user-side metadata (comments, reviews, tags, baskets)
+can be adapted to using the new facilities in order to validate the design and
+backend implementation details. Moreover, new facilities, such as file
+attachments, decorated formatting, integration with Invenio's search engine,
+full support for the access control system, or multimedia annotation
+capabilities may be considered.
+
+Regarding document targeted annotations, a more robust method of displaying the
+concerned files might be of interest. For PDF documents, Mozilla's PDF.js
+appears to be a viable solution, as long as a method of rendering complex files
+on server-side is implemented, and certain cross-browser compatibility issues
+are resolved; another option can be Multivio. Such a solution could allow for a
+more attractive interface, employing which users could, for example, visually
+highlight text fragments, in the same manner desktop applications allow.
+Another direction regards the validation of user input; either a solution as
+XTiger can be applied to restrict input on the user-side, or a more complex
+grammar can replace the current regular expression backend. Moreover, a richer
+collection of markers could be considered, covering, for example, the
+differences between reviews targeting stylistic, grammatical, or factual
+issues.
+
+Finally, the REST  interface could be employed not only for data output, but
+also for input; this may allow, for example, to import annotations from other
+systems. The Invenio framework already supports data input through its REST
+framework, as implemented, for example, by the ZENODO deposition API. Apart
+from importing linked Web data, annotations from desktop applications such as
+Mendeley can be of interest. On a higher level, exporting more Invenio resource
+types, such as user accounts or record metadata, to JSON-LD compliant documents,
+through the JSONAlchemy API, may provide a consolidated method of producing
+linked data.

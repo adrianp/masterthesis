@@ -18,7 +18,7 @@
 \usepackage{caption}
 \usepackage[left=2.5cm,right=2cm,top=3cm,bottom=3cm,twoside]{geometry}
 \usepackage{graphicx}
-\usepackage{hyperref}
+\usepackage[hidelinks]{hyperref}
 \usepackage{listings}
 \usepackage{makeidx}
 \usepackage{pdfpages}
@@ -178,9 +178,15 @@
         \label{sec:pub}
         \input{sections/impl/diss/pub.tex}
 
+    \clearpage
+
+    \subsection{Future Directions}
+        \label{sec:future}
+        \input{sections/impl/future/main.tex}
+
   \cleardoublepage
 
-  \section{Conclusions and Future Directions}
+  \section{Conclusions}
     \label{sec:outro}
     \input{sections/outro/main.tex}
 
