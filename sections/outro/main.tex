@@ -1,31 +1,33 @@
 %!TEX root=../../main.tex
 
-The project delivered a prototype of an annotation framework for the Invenio
-digital library platform. The high-level aim for this was to provide a
-standardised method of allowing the input of end-user generated metadata,
-regardless of its form: document comments or tags, record collections, or
-IRI-identified resource annotations. The more specific considered use-case, the
-initial motivation of the project, was the one related to CDS paper review
-workflow, in which authors need to aggregate large number of targeted comments
-on specific document locations, such as pages, sections, figures or equations
-and consider the necessary corrections.
+The aim of this project was to develop a structured annotation facility, the
+original use-case being identified in the scientific paper pre-publication
+workflow employed by high energy physics collaborations on the CERN Document
+Server. Apart from being able to comment at the global document level,
+reviewers also require more granular options, such as section, paragraph,
+figure, or equation targeted annotations. Moreover, aggregating such
+reviews should be possible in a facile manner, which would simplify the
+workflow for the authors in charge of amending papers.
 
-The base building blocks of the framework are provided, along with
-implementations of the Web page annotator and document targeted commenting
-facility. Moreover, a method for disseminating annotation data, conforming with
-the Open Annotation RDF model, is included; this makes use of modern
-technologies such as the JSON-LD serialisation format, or REST Web services in
+After a study of basic use cases and state of the art solutions and related
+technologies, a general annotation framework for the Invenio digital library
+platform was designed and implemented. The aim was to provide a standardised
+method of allowing input of end-user generated data regardless of its form:
+document comments, record collections and tags, or Web page annotations.
+
+The targeted annotator facility was implemented along with a document
+previewer, which facilitates both data input and aggregation for end-users.
+Furthermore, a method of disseminating annotations, in line with the Open
+Annotation RDF data model, was implemented. This makes use of modern Web
+technologies such as the JSON-LD serialisation format and REST services, in
 order to bestow a streamlined circulation workflow for any third-party
-interested in accessing Invenio metadata.
+interested in accessing user-generated metadata.
 
-The project built upon the new version of Invenio digital library platform, to
-which it brought a number of additional contributions, and the delivered
-prototype was deployed in order to gather end-user reactions. The feedback was
-positive, as the document annotator and its aggregation facilities can
-significantly simplify the pre-publication review workflows of the scientific
-community. Future developments might further improve this process, having the
-existing elements as the foundation.
-
-To conclude, the project explored a number of Web technologies linked to the
-resource annotation use case, implemented solutions for certain requirements of
-the Invenio platform, and paved the way for related future directions.
+The annotation facilities were developed in the context of the new Invenio
+digital library platform version, to which the project brought a number of
+additional contributions, such as fixes and improvements of existing
+components.  The document targeted annotator was released to end users for
+testing in a controlled environment, the feedback being highly positive. The
+general consensus is that the new aggregation features significantly simplify
+the pre-publication review process; future improvements, such as the ones
+presented in Section \ref{sec:future}, might improve the workflow even further.
