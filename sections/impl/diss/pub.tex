@@ -21,9 +21,7 @@ even by modifying the context keys to match to internal ones.
 
 Despite employing a JSON model in our implementation, we have chosen to
 programmatically apply the processing steps. Namely, a thin interface over
-JSONAlchemy was implemented\footnote{The code for this wrapper is already
-included in the source tree of the next Invenio version and will be shipped
-separately from the annotation features.}, allowing objects stored in JSON form
+JSONAlchemy was implemented, allowing objects stored in JSON form
 to specify their custom translation method. This method uses a default context,
 but custom ones can also be supplied, given that the object class has the
 required flexibility.

@@ -1,5 +1,13 @@
-71 commits with 2453 additions and 1525 deletions:
+79 commits with 5948 additions and 1770 deletions:
 
+db29742 annotations: JSON-LD publishing (2014-03-27 19:29:47 +0100)
+e2eff61 comments: annotations integration (2014-03-27 19:22:06 +0100)
+1d27488 annotations: record document annotations (2014-03-27 19:22:06 +0100)
+c640575 annotations: file attachments skeleton (2014-03-27 19:22:05 +0100)
+e3e5856 annotations: initial commit (2014-03-27 19:22:05 +0100)
+9d5097c previewer: PDFtk previewer (2014-03-27 19:22:05 +0100)
+52ed8d5 jsonalchemy: UUID validation fix (2014-03-26 18:54:19 +0100)
+3c09257 jsonalchemy: import and PEP8 fixes (2014-03-26 17:50:02 +0100)
 251a5ec installation: Pillow img requirement (2014-03-20 11:28:06 +0100)
 396bb4f jsonalchemy: JSON-LD tweaks (2014-03-19 11:36:15 +0100)
 e795fd3 base: PDFTK path discovery (2014-03-19 11:36:09 +0100)

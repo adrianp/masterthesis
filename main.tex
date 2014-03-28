@@ -17,7 +17,6 @@
 \usepackage{appendix}
 \usepackage{caption}
 \usepackage{emptypage}
-\usepackage{fancyhdr}
 \usepackage[left=2.5cm,right=2cm,top=3cm,bottom=3cm,twoside]{geometry}
 \usepackage{graphicx}
 \usepackage[hidelinks]{hyperref}
@@ -33,6 +32,8 @@
 
 \usepackage{epstopdf}  % load after graphic[s,x]
 
+
+%% headers
 \titleformat{\chapter}{\normalfont\huge}{\thechapter.}{20pt}{\huge}
 \pagestyle{myheadings}
 \renewcommand{\chaptermark}[1]{ \markboth{#1}{} }
@@ -41,18 +42,6 @@
 %% bold float labels
 \DeclareCaptionLabelFormat{myformat}{\textbf{#1}~\textbf{#2}}
 \captionsetup{labelformat=myformat}
-
-%% detailled margin sizes
-%\addtolength{\textwidth}{4cm}
-%\addtolength{\oddsidemargin}{-1.5cm}
-%\addtolength{\evensidemargin}{-1.5cm}
-%\addtolength{\textheight}{4.5cm}
-%\addtolength{\topmargin}{-3cm}
-%\setlength{\parindent}{0pt}
-%\setlength{\parskip}{1ex}
-
-%% Section number format
-%\renewcommand*\thesection{\arabic{section}}
 
 %% Give numbers to subsubsections and add them to index
 \setcounter{secnumdepth}{3}
@@ -73,9 +62,6 @@
 
 %% uncomment to add a DRAFT watermark on all pages
 \input{utils/draft.tex}
-
-%% words that should not by hyphenated
-%\hyphenation{JSONAlchemy}
 
 \begin{document}
 
@@ -224,9 +210,5 @@
     \section{Source Code Contributions}
       \label{apx:code}
       \input{sections/appendices/code.tex}
-
-  % if last page is odd-numbered, uncomment next two lines
-  \input{utils/blank.tex}
-  \input{utils/blank.tex}
 
 \end{document}
