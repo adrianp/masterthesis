@@ -2,12 +2,12 @@
 
 The aim of this project was to develop a structured annotation facility, the
 original use-case being identified in the scientific paper pre-publication
-workflow employed by high energy physics collaborations on the CERN Document
-Server. Apart from being able to comment at the global document level,
-reviewers also require more granular options, such as section, paragraph,
-figure, or equation targeted annotations. Moreover, aggregating such
-reviews should be possible in a facile manner, which would simplify the
-workflow for the authors in charge of amending papers.
+workflow employed by high energy physics collaborations. Apart from being able
+to comment at the global document level, collaboration members also require
+more granular options, such as section, paragraph, figure, or equation targeted
+annotations.  Moreover, aggregating such reviews should be possible in a facile
+manner, which would simplify the workflow for the authors in charge of amending
+papers.
 
 After studying a number of use cases and state of the art solutions and related
 technologies, a general annotation framework for the Invenio digital library
@@ -16,18 +16,20 @@ method of allowing input of end-user generated metadata regardless of its form:
 document comments, record collections and tags, or Web page annotations.
 
 The targeted annotator facility was implemented along with a document
-previewer, which facilitates both data input and aggregation for end-users.
-Furthermore, a method of disseminating annotations, in line with the Open
-Annotation RDF data model, was implemented. This makes use of modern Web
+previewer which facilitates both data input and aggregation for end-users.
+Furthermore, a method of disseminating annotations, in line with the emerging
+Open Annotation RDF data model, was implemented. It makes use of modern Web
 technologies such as the JSON-LD serialisation format and REST services, in
 order to bestow a streamlined circulation workflow for any third-party
 interested in accessing user-generated metadata.
 
 The annotation facilities were developed in the context of the new Invenio
-digital library platform version, to which the project brought a number of
-additional contributions, such as fixes and improvements of existing
-components.  The document targeted annotator was released for end-user testing
-in a controlled environment, the feedback being highly positive. The general
+version, to which the project brought a number of additional contributions.
+These include fixes and additions to several components of the digital library
+platform.
+
+The document targeted annotator was released for end-user testing in a
+controlled environment, the feedback being highly positive. The general
 consensus is that the new aggregation features significantly simplify the
 pre-publication review process; future improvements, such as the ones presented
 in Section \ref{sec:future}, might improve the workflow even further.
