@@ -32,7 +32,6 @@
 *.tdo
 
 build
-*.pdf
 *.fls
 *.bak
 *.xwm
